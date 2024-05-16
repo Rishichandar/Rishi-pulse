@@ -1,0 +1,127 @@
+/* #all-container{
+    width: 200px;
+    height: 200px;
+    margin-left: 150px;
+    margin-top: 100px;
+    border: 1px groove rgb(223, 230, 233);
+}#div-box{
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(5px); 
+    box-shadow: 2px 7px 7px 5 rgba(31, 38, 135, 0.37);
+}
+
+
+
+.slide-In {
+    animation: slide 3s ease-out;
+  }
+  
+  @keyframes slide {
+    from {
+      transform: translateY(70%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .hidden1 {
+    display: none;
+  }
+  #sub-usecase{
+    position: relative;
+    top: 70px;
+    left: 665px;
+    width: clamp(100px, 50vw, 120px);
+    height: 2.3rem;
+    padding: 0 1.25rem;
+    border:1px groove ;
+    border-color:#d5dbd7;
+    color: white;
+    border-radius:25px;
+    margin: -0.625rem auto;
+    transition: all 250ms;
+    font-family: sans-serif;
+    background-color: #2ad84f;
+    letter-spacing: 1px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  }
+  #div-input{
+     font-size: small;
+     width: 220px;
+  }
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+} */
+
+
+#attach-file{
+  margin-top: 25px;
+  position: relative;
+  background-color: #4d81b9;
+  height: 40px;
+  width: 140px;
+
+
+}
+#add-btn{
+  margin-top: 25px;
+  position: relative;
+  left: 20px;
+  width: 140px;
+  background-color: rgb(27, 216, 59);
+  height: 40px;
+}
+
+#filled-basic,#outlined-basic,#outlined-multiline-static,#demo-multiple-name-label,#sel,#demo-simple-select{
+  font-size: 12px;
+  color: rgb(97, 92, 92);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#back-btn{
+ 
+  top: 60px;
+  left: 1245px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  bottom: 10px;
+ 
+}
+#contain1 {
+  box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.2);
+  width: 450px;
+  height: 300px;
+  position: relative;
+  left: 200px;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title1 {
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #2d2e30;
+  position: relative;
+  /* bottom: 70px; */
+  
+}
+#usecase-Form{
+  width: 100px;
+  height: 100px;
+  /* border: 1px groove grey; */
+  position: relative;
+  left: 900px;
+  top: -270px;
+
+
+}

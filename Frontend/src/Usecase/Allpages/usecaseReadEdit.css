@@ -1,0 +1,332 @@
+/* #titlee2{
+    position: relative;
+    top: 30px;
+   left: 145px;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif; Font-family:  "Zoho_Puvi_Bold"; 
+    letter-spacing: 4px;
+   
+    font-weight: 500;
+    color:#4072a7 ;
+
+    
+}
+#usecase-edit{
+    position: relative;
+    left: 217px;
+    top: 146px;
+    height: 1.8rem;
+    border:1px groove ;
+    border-color:transparent;
+    color: rgb(46, 45, 45);
+    border-radius: 5px;
+    margin: -0.625rem auto;
+    position: relative;
+    transition: all 250ms;
+    font-family: sans-serif;
+    color: rgb(46, 45, 45);
+   
+}
+#usecase-edit {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  #usecase-edit:hover::after {
+    content: "Edit";
+    position: absolute;
+    top: 155%;
+    left: 55%;
+    transform: translateX(-50%);
+    background-color: rgba(43, 91, 223, 0.7);
+    color: rgb(255, 255, 255);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: all 0.4ms ease; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999; 
+  }
+ 
+#usecase-submit{
+    position: relative;
+    left:300px;
+    top: 100px;
+}
+
+#edit-submit{
+    position: relative;
+    left: 92px;
+    top: 100px;
+    height: 1.8rem;
+    border:1px groove ;
+    width: 65px;
+    border-color:transparent;
+    color: rgb(46, 45, 45);
+    border-radius: 15px;
+    margin: -0.625rem auto;
+    font-size: 12px;
+    position: relative;
+    transition: all 250ms;
+    font-family: sans-serif;
+    color: rgb(46, 45, 45);
+    background-color: rgb(255, 255, 255);
+}
+#edit-cancel{
+    position: relative;
+    left: 148px;
+    top: 118px;
+    width: 65px;
+    height: 1.8rem;
+    border:1px groove ;
+    border-color:transparent;
+    color: rgb(46, 45, 45);
+    border-radius: 5px;
+    margin: -0.625rem auto;
+    position: relative;
+    transition: all 250ms;
+    font-family: sans-serif;
+    color: rgb(36, 34, 34);
+}
+#edit-cancel{
+    position: relative;
+    cursor: pointer;
+  }
+  
+  #edit-cancel:hover::after {
+    content: "cancel";
+    position: absolute;
+    top: 155%;
+    left: 55%;
+    transform: translateX(-50%);
+    background-color: rgba(43, 91, 223, 0.7);
+    color: rgb(255, 255, 255);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: all 0.4ms ease; 
+    z-index: 999;
+  }
+#edit-input{
+    width: clamp(100px, 40vw, 210px);
+    height: 2.2rem;
+    padding: 0 1.25rem;
+    border: none;
+    
+    border-bottom: 1px groove rgb(201, 193, 193);
+    border-radius: 5px;
+    margin: 0.625rem auto;
+    outline: none;
+    transition: all 250ms;
+   
+    box-shadow: 2px 2px 7px 0 rgba(121, 118, 118, 0.2);
+    text-align: center;
+   
+    
+    background-color: hsl(0, 0%, 99%);
+    position: relative;
+    left: 15px;
+    top: 0px;
+    font-size: 12px;
+    color: #8f8f92;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+.usecase1{
+   font-size: 13px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
+#details{
+  position: relative;
+  top: 170px;
+  left: 370px;
+  width: 500px;
+  
+}
+ #title2{
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+    font-size: 25px;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; Font-family:  "Zoho_Puvi_Bold";  */
+    letter-spacing: 4px;
+    color:#4072a7 ;
+
+    
+}
+#title3{
+  position: relative;
+  bottom: -60px;
+  left: 150px;
+  font-size: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif; Font-family:  "Zoho_Puvi_Bold"; 
+  letter-spacing: 4px;
+ 
+  font-weight: 500;
+  color:#4072a7 ;
+
+  
+}
+#datas{
+ font-size:1.0rem;
+ line-height: 35px;
+
+letter-spacing: 1px;
+position: relative;
+bottom: 50px;
+;
+
+}
+#usecase-edit{
+  position: relative;
+  left: 5px;
+  top: 0px;
+  height: 1.8rem;
+  border:1px groove ;
+  border-color:transparent;
+  color: rgb(46, 45, 45);
+  border-radius: 5px;
+  margin: -0.625rem auto;
+  position: relative;
+  transition: all 250ms;
+  font-family: sans-serif;
+  color: rgb(46, 45, 45);
+ 
+}
+#usecase-edit {
+  position: relative;
+  cursor: pointer;
+}
+
+#usecase-edit:hover::after {
+  content: "Edit";
+  position: absolute;
+  top: 165%;
+  left: 55%;
+  transform: translateX(-50%);
+  background-color: rgba(43, 91, 223, 0.7);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: all 0.4ms ease; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999; 
+}
+#edit-cancel{
+  position: relative;
+  left: 0px;
+  top:0px;
+  border-color:transparent;
+  background-color: white;
+  color: rgb(46, 45, 45);
+  position: relative;
+  transition: all 250ms;
+  font-family: sans-serif;
+  color: rgb(27, 26, 26);
+}
+#edit-cancel{
+  position: relative;
+  cursor: pointer;
+}
+
+#edit-cancel:hover::after {
+  content: "cancel";
+  position: absolute;
+  top: 155%;
+  left: 55%;
+  transform: translateX(-50%);
+  background-color: rgba(43, 91, 223, 0.7);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: all 0.4ms ease; 
+  z-index: 999;
+}
+#edit-input{
+  border: none;
+ letter-spacing: 1px;
+ width: 115px;
+ font-size: 13px;
+ color: grey;
+
+
+}
+#edit-input:focus{
+  border: none;
+               /* Set the border color when the input is focused */
+}
+#edit-submit{
+  position: relative;
+  left:0px;
+  top: 0px;
+  height: 1.8rem;
+  border:1px groove ;
+  width: 65px;
+  border-color:transparent;
+  color: rgb(46, 45, 45);
+  border-radius: 5px;
+  margin: -0.625rem auto;
+  font-size: 12px;
+  position: relative;
+  transition: all 250ms;
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: rgb(32, 207, 61);
+}
+/* for back button */
+#back-btn{
+ 
+  top: 20px;
+  left: 1250px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  bottom: 10px;
+ 
+}
+th{
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgb(73, 70, 70);
+}
+#taskdetails{
+  position: relative;
+  font-size: larger;
+  color: green; 
+}
+#usecase-table{
+  width: 85%;
+  border-collapse: collapse;
+  position: relative;
+  top: 150px;
+  left: 145px;
+  text-align: center;
+}
+.task1 {
+  position: relative;
+  cursor: pointer;
+}
+
+.task1:hover::after {
+  content: "Add Task";
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(43, 91, 223, 0.7);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: all 0.4ms ease; /* Adds a smooth transition effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Ensures the edit text appears above other elements */
+}
