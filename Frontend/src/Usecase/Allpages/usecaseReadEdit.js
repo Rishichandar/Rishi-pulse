@@ -12,16 +12,16 @@ import Button from '@mui/material/Button';
 export const UsecaseReadEdit = () => {
     const location = useLocation();
     const title = location.state?.title;
-    // const email = location.state?.email;
     const [usecases, setUsecases] = useState([]);
-    const [editModeId, setEditModeId] = useState(null); // State to track edit mode for a specific row
+    const [editModeId, setEditModeId] = useState(null);
     const [editedUsecase, setEditedUsecase] = useState({});
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchUsecases = async () => {
             try {
-                if (!title) return; // No need to fetch if title is not provided
+                if (!title) return;
                 const response = await axios.get(`http://localhost:4023/usecases?title=${encodeURIComponent(title)}`);
                 setUsecases(response.data);
             } catch (error) {
@@ -35,6 +35,7 @@ export const UsecaseReadEdit = () => {
         setEditModeId(id);
         const usecaseToEdit = usecases.find(usecase => usecase.id === id);
         setEditedUsecase(usecaseToEdit);
+        setIsSubmitDisabled(false);
         toast.success("Edit mode on");
     };
 
@@ -49,8 +50,9 @@ export const UsecaseReadEdit = () => {
     const handleSubmit = async () => {
         try {
             await axios.put(`http://localhost:4023/usecases/${editedUsecase.id}`, editedUsecase);
-            setEditModeId(null); // Turn off edit mode after submission
+            setEditModeId(null);
             setEditedUsecase({});
+            setIsSubmitDisabled(true);
             toast.success("Updated successfully");
             const response = await axios.get(`http://localhost:4023/usecases?title=${encodeURIComponent(title)}`);
             setUsecases(response.data);
@@ -62,94 +64,157 @@ export const UsecaseReadEdit = () => {
     const back = () => {
         navigate("/user");
     }
-    const totask = (title,summary) => {
-  
-      navigate("/task", { state: { title: title,summary:summary} });
+
+    const totask = (title, summary) => {
+        navigate("/task", { state: { title: title, summary: summary } });
     };
+
+    const handleCancelEdit = () => {
+        setEditModeId(null);
+        setEditedUsecase({});
+        setIsSubmitDisabled(true);
+        toast.info("Edit mode cancelled");
+    };
+
     return (
-      <>
-      <Stack spacing={2} direction="row">
-          <Button id='back-btn' variant="outlined" onClick={back}>Back</Button>
-      </Stack>
+        <>
+            <Stack spacing={2} direction="row">
+                <Button id='back-btn' variant="outlined" onClick={back}>Back</Button>
+            </Stack>
 
-      <table id='usecase-table'>
-          <thead>
-              <tr>
-                  <th>Title</th>
-                  <th>Summary</th>
-                  <th>Description</th>
-                  <th>Team</th>
-                  <th>Status</th>
-                  <th>End Date</th>
-                  <th colSpan="3">Actions</th>
-              </tr>
-          </thead>
-          <tbody>
-              {usecases.length === 0 ? (
-                  <tr>
-                      <td>Doesn't add usecase</td>
-                  </tr>
-              ) : (
-                  usecases.map((usecase) => (
-                      // Inside the map function where you render each usecase
-                      <tr key={usecase.id}>
-                          {/* Render use case details */}
-                          <td>{title}</td>
-                          <td>
-                              {editModeId === usecase.id ?
-                                  <input id='edit-input' type="text" name="summary" value={editedUsecase.summary} onChange={handleInputChange} />
-                                  : usecase.summary}
-                          </td>
-                          <td>
-                              {editModeId === usecase.id ?
-                                  <input id='edit-input' type="text" name="description" value={editedUsecase.description} onChange={handleInputChange} />
-                                  : usecase.description}
-                          </td>
-                          <td>
-                              {editModeId === usecase.id ?
-                                  <input id='edit-input' type="text" name="team" value={editedUsecase.team} onChange={handleInputChange} />
-                                  : (Array.isArray(usecase.team) ? usecase.team.join(', ') : usecase.team)}
-                          </td>
-                          <td>
-                              {editModeId === usecase.id ?
-                                  <input id='edit-input' type="text" name="status" value={editedUsecase.status} onChange={handleInputChange} />
-                                  : usecase.status}
-                          </td>
-                          <td>
-                              {editModeId === usecase.id ?
-                                  <input id='edit-input' type="date" name="enddate" value={editedUsecase.enddate} onChange={handleInputChange} />
-                                  : new Date(usecase.enddate).toLocaleDateString()}
-                          </td>
-                          <td>
-                              {editModeId === usecase.id ?
-                                  <button id='edit-submit' onClick={handleSubmit}>Submit</button>
-                                  : null}
-                          </td>
-                          <td>
-                              {editModeId === usecase.id ?
-                                  <button id='edit-cancel' onClick={() => setEditModeId(null)}><IoClose size={20} /></button>
-                                  :
-                                  <span onClick={() => handleEditClick(usecase.id)} id='usecase-edit'><MdEdit /></span>}
-                          </td>
-                          {/* Move the task button mapping outside of this use case mapping */}
-                          <td>
-                              <span className="task1" onClick={() => totask(title, usecase.summary)} id='taskdetails'size={23}><MdOutlineTask /></span>
-                          </td>
-                      </tr>
-                  ))
-              )}
-          </tbody>
-      </table>
-
-      {/* Task button mapping
-      {usecases.map((usecase) => (
-          <div key={usecase.id}>
-              <span id='taskdetails' className="task1" onClick={() => totask(title, usecase.summary)}>
-                  <MdOutlineTask size={20} />
-              </span>
-          </div>
-      ))} */}
-
-  </>
+            <table id='usecase-table'>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Summary</th>
+                        <th>Description</th>
+                        <th>Team</th>
+                        <th>Status</th>
+                        <th>End Date</th>
+                        <th colSpan="3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {usecases.length === 0 ? (
+                        <tr>
+                            <td colSpan="9">No use cases added</td>
+                        </tr>
+                    ) : (
+                        usecases.map((usecase) => (
+                            <tr key={usecase.id}>
+                                <td>{title}</td>
+                                <td>
+                                    {editModeId === usecase.id ? (
+                                        <input
+                                            id='edit-input'
+                                            type="text"
+                                            name="summary"
+                                            value={editedUsecase.summary}
+                                            onChange={handleInputChange}
+                                            className='enabled-input'
+                                        />
+                                    ) : (
+                                        usecase.summary
+                                    )}
+                                </td>
+                                <td>
+                                    {editModeId === usecase.id ? (
+                                        <input
+                                            id='edit-input'
+                                            type="text"
+                                            name="description"
+                                            value={editedUsecase.description}
+                                            onChange={handleInputChange}
+                                            className='enabled-input'
+                                        />
+                                    ) : (
+                                        usecase.description
+                                    )}
+                                </td>
+                                <td>
+                                    {editModeId === usecase.id ? (
+                                        <input
+                                            id='edit-input'
+                                            type="text"
+                                            name="team"
+                                            value={editedUsecase.team}
+                                            onChange={handleInputChange}
+                                            className='enabled-input'
+                                        />
+                                    ) : (
+                                        Array.isArray(usecase.team) ? usecase.team.join(', ') : usecase.team
+                                    )}
+                                </td>
+                                <td>
+                                    {editModeId === usecase.id ? (
+                                        <input
+                                            id='edit-input'
+                                            type="text"
+                                            name="status"
+                                            value={editedUsecase.status}
+                                            onChange={handleInputChange}
+                                            className='enabled-input'
+                                        />
+                                    ) : (
+                                        usecase.status
+                                    )}
+                                </td>
+                                <td>
+                                    {editModeId === usecase.id ? (
+                                        <input
+                                            id='edit-input'
+                                            type="date"
+                                            name="enddate"
+                                            value={editedUsecase.enddate}
+                                            onChange={handleInputChange}
+                                            className='enabled-input'
+                                        />
+                                    ) : (
+                                        new Date(usecase.enddate).toLocaleDateString()
+                                    )}
+                                </td>
+                                <td>
+                                    <button
+                                        id='edit-submit'
+                                        onClick={handleSubmit}
+                                        disabled={isSubmitDisabled}
+                                        className={isSubmitDisabled ? 'disabled-btn' : 'enabled-btn'}
+                                    >
+                                        Submit
+                                    </button>
+                                </td>
+                                <td>
+                                    {editModeId === usecase.id ? (
+                                        <button
+                                            id='edit-cancel'
+                                            onClick={handleCancelEdit}
+                                        >
+                                            <IoClose size={20} />
+                                        </button>
+                                    ) : (
+                                        <span
+                                            onClick={() => handleEditClick(usecase.id)}
+                                            id='usecase-edit'
+                                        >
+                                            <MdEdit />
+                                        </span>
+                                    )}
+                                </td>
+                                <td>
+                                    <span
+                                        className="task1"
+                                        onClick={() => totask(title, usecase.summary)}
+                                        id='taskdetails'
+                                        size={23}
+                                    >
+                                        <MdOutlineTask />
+                                    </span>
+                                </td>
+                            </tr>
+                        ))
+                    )}
+                </tbody>
+            </table>
+        </>
     );
 };

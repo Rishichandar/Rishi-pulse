@@ -330,3 +330,27 @@ th{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 999; /* Ensures the edit text appears above other elements */
 }
+/* UsecaseReadEdit.css */
+
+#edit-submit.disabled-btn {
+  background-color: rgb(194, 185, 185);
+  color: white;
+  cursor: not-allowed;
+}
+
+#edit-submit.enabled-btn {
+  background-color: rgb(32, 207, 61);
+  color: white;
+  cursor: pointer;
+}
+.disabled-input {
+  background-color: lightgrey;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.enabled-input {
+  background-color: white;
+  cursor: text;
+  pointer-events: auto;
+}
