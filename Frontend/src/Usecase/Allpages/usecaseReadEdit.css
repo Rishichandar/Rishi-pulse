@@ -290,6 +290,14 @@ bottom: 50px;
   bottom: 10px;
  
 }
+#admin-back-btn{
+  top: 20px;
+  left: 1250px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  bottom: 10px;
+}
 th{
   font-size: 13px;
   font-weight: 500;
@@ -302,11 +310,11 @@ th{
   color: green; 
 }
 #usecase-table{
-  width: 85%;
+  width: 87%;
   border-collapse: collapse;
   position: relative;
   top: 150px;
-  left: 145px;
+  left: 155px;
   text-align: center;
 }
 .task1 {

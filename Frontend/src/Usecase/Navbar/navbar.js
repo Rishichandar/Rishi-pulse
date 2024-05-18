@@ -28,6 +28,7 @@ function Navbar(){
    const handleClose = () => setOpen(false);
    const [open, setOpen] = useState(false);
    const data = useSelector((state) => state.auth.user);
+   console.log("role",data.RoleId)
    const dispatch = useDispatch();
 //for logout
    const handleLogout = () => {

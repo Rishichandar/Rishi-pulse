@@ -387,3 +387,6 @@
   left: 980px;
   color: rgb(100, 97, 97);
  }
+ #usecase-nav{
+  cursor: pointer;
+ }

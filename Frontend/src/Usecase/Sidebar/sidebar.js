@@ -8,6 +8,7 @@ import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { ImProfile } from "react-icons/im";
 import { useSelector, useDispatch } from "react-redux";
 
+
 const Sidebar1 = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -21,6 +22,9 @@ const Sidebar1 = () => {
   const handleAttendanceManagementClick = () => {
     setSelectedItem(selectedItem === "AttendanceManagement" ? null : "AttendanceManagement");
   };
+
+  // const data = useSelector((state) => state.auth.user);
+  // console.log("hiii",data.Email)
   const roleid=useSelector((state)=>state.auth.user.RoleId)
   console.log("roleid :",roleid);
 
@@ -136,50 +140,5 @@ const Sidebar1 = () => {
 
 export default Sidebar1;
 
-// import { useState } from "react";
 
-// import{FaHome,} from "react-icons/fa";
-// import { RiAdminFill } from "react-icons/ri";
-// import { FaUserCircle } from "react-icons/fa";
-// import { BiTask } from "react-icons/bi";
-// import { FiMenu } from "react-icons/fi";import { FiArrowLeftCircle } from "react-icons/fi";
-// import { Link } from 'react-router-dom';
-
-
-//  const Sidebar1 = () => {
-//   const navItems = ["Home","Admin","user","Task"];
-// const icons=[<FaHome/>,<RiAdminFill/>,<FaUserCircle/>,<BiTask/>]
-// const paths = ["/home", "/admin", "/user", "/task"]; 
-//   const [isOpen, setIsOpen] = useState(false);
-//   return (
-//     <section className="page sidebar-2-page">
-//       <aside className={`sidebar-2 ${isOpen ? "open" : ""}`}>
-//         <div className="inner">
-//           <header>
-//             <button
-//               type="button"
-//               className="sidebar-2-burger"
-//               onClick={() => setIsOpen(!isOpen)}
-//             >
-//               <span className="material-symbols-outlined">
-//                 {isOpen ? <FiArrowLeftCircle size={25} style={{color:"#ffffff"}}/> : <FiMenu size={25} style={{color:"#ffffff"}}/>}
-//               </span>
-//             </button>
-         
-//           </header>
-//           <nav>
-//             {navItems.map((item,index) => (
-//               <button key={item} type="button" id="bt"  >
-//                 <span className="material-symbols-outlined">{icons[index]}</span>
-//                <Link to={paths[index]}style={{ textDecoration: 'none' }}><p className="navbar-item">{item}</p></Link> 
-//               </button>
-//             ))}
-//           </nav>
-        
-//         </div>
-//       </aside>
-//     </section>
-//   );
-// };
-// export default Sidebar1
  

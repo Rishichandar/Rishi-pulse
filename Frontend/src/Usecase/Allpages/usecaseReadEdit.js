@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MdEdit } from "react-icons/md";
@@ -8,6 +9,8 @@ import { MdOutlineTask } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { useSelector } from "react-redux";
+import { BiTask } from "react-icons/bi";
 
 export const UsecaseReadEdit = () => {
     const location = useLocation();
@@ -15,7 +18,6 @@ export const UsecaseReadEdit = () => {
     const [usecases, setUsecases] = useState([]);
     const [editModeId, setEditModeId] = useState(null);
     const [editedUsecase, setEditedUsecase] = useState({});
-    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -35,7 +37,6 @@ export const UsecaseReadEdit = () => {
         setEditModeId(id);
         const usecaseToEdit = usecases.find(usecase => usecase.id === id);
         setEditedUsecase(usecaseToEdit);
-        setIsSubmitDisabled(false);
         toast.success("Edit mode on");
     };
 
@@ -52,7 +53,6 @@ export const UsecaseReadEdit = () => {
             await axios.put(`http://localhost:4023/usecases/${editedUsecase.id}`, editedUsecase);
             setEditModeId(null);
             setEditedUsecase({});
-            setIsSubmitDisabled(true);
             toast.success("Updated successfully");
             const response = await axios.get(`http://localhost:4023/usecases?title=${encodeURIComponent(title)}`);
             setUsecases(response.data);
@@ -64,6 +64,9 @@ export const UsecaseReadEdit = () => {
     const back = () => {
         navigate("/user");
     }
+    const adminBack = () => {
+        navigate("/admin");
+    }
 
     const totask = (title, summary) => {
         navigate("/task", { state: { title: title, summary: summary } });
@@ -72,14 +75,53 @@ export const UsecaseReadEdit = () => {
     const handleCancelEdit = () => {
         setEditModeId(null);
         setEditedUsecase({});
-        setIsSubmitDisabled(true);
         toast.info("Edit mode cancelled");
+    };
+
+    // useState for use case task details
+    const [error, setError] = useState(null);
+    const [showYourInfo, setShowYourInfo] = useState(true); // State to control visibility
+    const [showTab1, setShowTab1] = useState(true);
+    const [toggleBarOpen, setToggleBarOpen] = useState(false);
+    const [taskData, setTaskData] = useState([]);
+
+    const closeToggleBar = () => {
+        // Close the toggle bar
+        setToggleBarOpen(false);
+        setShowTab1(true);
+    };
+
+    // for admin use case view
+    const data = useSelector((state) => state.auth.user);
+    let Roleid = data.RoleId;
+
+    // for viewing use case task details
+    const handleTaskButtonClick = async (summary) => {
+        try {
+            const response = await fetch(`http://localhost:4023/task_details/${summary}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch task data');
+            }
+            const jsonData = await response.json();
+            setTaskData(jsonData);
+            setToggleBarOpen(true);
+            setShowTab1(!showTab1);
+            setShowYourInfo(false);
+            setError(null);
+        } catch (error) {
+            console.log("summary:", summary);
+            toast.error("didn't add any task details");
+        }
     };
 
     return (
         <>
             <Stack spacing={2} direction="row">
-                <Button id='back-btn' variant="outlined" onClick={back}>Back</Button>
+                {Roleid === 1 ? (
+                    <Button id='admin-back-btn' variant="outlined" onClick={adminBack}>Back</Button>
+                ) : (
+                    <Button id='back-btn' variant="outlined" onClick={back}>Back</Button>
+                )}
             </Stack>
 
             <table id='usecase-table'>
@@ -91,7 +133,7 @@ export const UsecaseReadEdit = () => {
                         <th>Team</th>
                         <th>Status</th>
                         <th>End Date</th>
-                        <th colSpan="3">Actions</th>
+                        {Roleid !== 1 && <th colSpan="3">Actions</th>}
                     </tr>
                 </thead>
                 <tbody>
@@ -173,41 +215,66 @@ export const UsecaseReadEdit = () => {
                                         new Date(usecase.enddate).toLocaleDateString()
                                     )}
                                 </td>
-                                <td>
-                                    <button
-                                        id='edit-submit'
-                                        onClick={handleSubmit}
-                                        disabled={isSubmitDisabled}
-                                        className={isSubmitDisabled ? 'disabled-btn' : 'enabled-btn'}
-                                    >
-                                        Submit
-                                    </button>
-                                </td>
-                                <td>
-                                    {editModeId === usecase.id ? (
-                                        <button
-                                            id='edit-cancel'
-                                            onClick={handleCancelEdit}
-                                        >
-                                            <IoClose size={20} />
-                                        </button>
-                                    ) : (
-                                        <span
-                                            onClick={() => handleEditClick(usecase.id)}
-                                            id='usecase-edit'
-                                        >
-                                            <MdEdit />
-                                        </span>
-                                    )}
-                                </td>
+                                {Roleid !== 1 && (
+                                    <>
+                                        <td>
+                                            {editModeId === usecase.id ? (
+                                                <button
+                                                    id='edit-submit'
+                                                    onClick={handleSubmit}
+                                                    className='enabled-btn'
+                                                    disabled={editedUsecase.summary === '' || editedUsecase.description === '' || editedUsecase.team === '' || editedUsecase.status === '' || editedUsecase.enddate === ''}
+                                                >
+                                                    Submit
+                                                </button>
+                                            ) : (
+                                                <button
+                                                    id='edit-submit'
+                                                    className='disabled-btn'
+                                                    disabled
+                                                >
+                                                    Submit
+                                                </button>
+                                            )}
+                                        </td>
+                                        <td>
+                                            {editModeId === usecase.id ? (
+                                                <button
+                                                    id='edit-cancel'
+                                                    onClick={handleCancelEdit}
+                                                >
+                                                    <IoClose size={20} />
+                                                </button>
+                                            ) : (
+                                                <span
+                                                    onClick={() => handleEditClick(usecase.id)}
+                                                    id='usecase-edit'
+                                                >
+                                                    <MdEdit />
+                                                </span>
+                                            )}
+                                        </td>
+                                        <td>
+                                            <span
+                                                className="task1"
+                                                onClick={() => totask(title, usecase.summary)}
+                                                id='taskdetails'
+                                                size={30}
+                                            >
+                                                <MdOutlineTask size={19} />
+                                            </span>
+                                        </td>
+                                    </>
+                                )}
+                            
                                 <td>
                                     <span
-                                        className="task1"
-                                        onClick={() => totask(title, usecase.summary)}
+                                        className="task"
+                                        onClick={() => handleTaskButtonClick(usecase.summary)}
                                         id='taskdetails'
-                                        size={23}
+                                        size={30}
                                     >
-                                        <MdOutlineTask />
+                                        <BiTask size={18} />
                                     </span>
                                 </td>
                             </tr>
@@ -215,6 +282,32 @@ export const UsecaseReadEdit = () => {
                     )}
                 </tbody>
             </table>
+            <div className={`toggle-bar ${toggleBarOpen ? 'open' : ''}`}>
+                <div className="toggle-bar-content">
+                    <table id='mini1'>
+                        <thead>
+                            <tr>
+                                <th>Usecase</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Daily Task</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {Array.isArray(taskData) && taskData.map((obj) => (
+                                <tr key={obj.ID}>
+                                    <td>{obj.usecasetitle}</td>
+                                    <td>{obj.Date.substring(0, 10)}</td>
+                                    <td>{obj.Time}</td>
+                                    <td>{obj.Dailytask}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <span onClick={closeToggleBar}><IoClose /></span>
+                </div>
+            </div>
         </>
     );
 };
+

@@ -287,9 +287,9 @@ db.query(sql, [userEmail], function(error, result) {
 //     res.json(results);
 //   });
 // });
-app.get("/task_details/:title", (req, res) => {
-let Projecttitle = req.params.title; // Use lowercase 'title'
-let query = `SELECT * FROM taskdetails WHERE Title = ?`;
+app.get("/task_details/:summary", (req, res) => {
+let Projecttitle = req.params.summary; // Use lowercase 'title'
+let query = `SELECT * FROM taskdetails WHERE usecasetitle = ?`;
 
 db.query(query, [Projecttitle], (err, results) => { // Use lowercase 'title' here as well
   if (err) {

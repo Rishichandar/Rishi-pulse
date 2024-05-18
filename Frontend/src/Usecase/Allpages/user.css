@@ -468,3 +468,42 @@
     top: 3px;
     left: 5px;
     }
+
+    .circle {
+      width: 60px; /* Adjust size as needed */
+      height: 60px; /* Adjust size as needed */
+      border-radius: 50%; /* Makes the div a circle */
+      background-color: rgb(19, 230, 54); /* Example background color */
+      position: relative;
+      left: 1240px;
+      top: 105px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .blur-animation {
+      animation: blur-and-normal 1s infinite;
+    }
+    
+    /* @keyframes blur-and-normal {
+      0% {
+        filter: blur(0);
+      }
+      50% {
+        filter: blur(1px);
+      }
+      100% {
+        filter: blur(0);
+      }
+    } */
+    @keyframes blur-and-normal {
+      from {
+        filter: blur(0px);
+      }
+      to {
+        filter: blur(2px); /* Adjust blur radius as needed */
+      }
+    }
+
+    
