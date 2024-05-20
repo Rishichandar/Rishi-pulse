@@ -275,10 +275,16 @@ function User() {
       {/* <div className={`circle ${isBlinking ? 'blink' : ''}`} onClick={addProject}>
         <GoPlus size={40} color="white" />
       </div> */}
-      <div >
-         <span  className={` ${isBlurAnimating ? 'blur-animation' : ''}`} id="add-project">Add project</span>
-        <div  className="circle" onClick={addProject} >  <GoPlus size={40} color="white" /></div>
-      </div>
+     {!editMode && (
+        <div>
+          <span className={`${isBlurAnimating ? 'blur-animation' : ''}`} id="add-project">
+            Add project
+          </span>
+          <div className="circle" onClick={addProject}>
+            <GoPlus size={40} color="white" />
+          </div>
+        </div>
+      )}
 
       
     </>

@@ -102,7 +102,7 @@ const Sidebar1 = () => {
                     <p className="navbar-item2">Home</p>
                   </button>
                 </Link> */}
-                {roleid !== 2 && (
+                {roleid === 1 && (
                 <Link to="/admin" style={{ textDecoration: "none" }}className="material-symbols-outlined">
                   <button type="button"id="nav-button">
                     <span >

@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import Title from "../Title/title";
-import Navigate from "../projectdetails/navigate";
 import Rightdiv from "../rightdiv/right-cont";
 
 export const Home = () => {
@@ -12,7 +11,6 @@ export const Home = () => {
     <>
     {/* <h1>{email}</h1> */}
       <Title />
-      <Navigate />
       <Rightdiv />
     </>
   );

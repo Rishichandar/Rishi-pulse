@@ -329,24 +329,6 @@
     color: #37b937;
   }
   /* for toglebar */
-  .toggle-bar {
-    position: fixed;
-    top: 55px;
-    right: -410px; /* initially off-screen */
-    height: 100%;
-    width: 410px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease; /* animate the right property */
-  }
-  
-  .toggle-bar.open {
-    right: 0; /* slide in from the right when open */
-  }
-  
-  .toggle-bar-content {
-    padding: 20px;
-  }
   
   .task1 {
     position: relative;
