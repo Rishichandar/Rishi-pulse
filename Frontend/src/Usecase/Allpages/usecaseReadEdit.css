@@ -389,9 +389,9 @@ th{
 .toggle-bar {
   position: fixed;
   top: 55px;
-  right: -410px; /* initially off-screen */
+  right: -420px; /* initially off-screen */
   height: 100%;
-  width: 410px;
+  width: 420px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease; /* animate the right property */
@@ -402,5 +402,12 @@ th{
 }
 
 .toggle-bar-content {
-  padding: 25px;
+  padding: 30px;
+}
+
+#your-info1{
+  position: relative;
+  top: 100px;
+  left: 165px;
+  color: rgb(21, 170, 41);
 }

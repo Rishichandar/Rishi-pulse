@@ -229,7 +229,12 @@ function User() {
               </tr>
             </thead>
             <tbody>
-              {yourData.map((obj) => (
+            {yourData.length === 0 ? (
+                <tr>
+                  <td colSpan="9">No projects added</td>
+                </tr>
+              ) : (
+              yourData.map((obj) => (
                 <tr key={obj.Projectid}>
                   <td>{obj.Title}</td>
                   <td>{obj.Description}</td>
@@ -241,7 +246,8 @@ function User() {
                   <td style={{ cursor: "pointer" }}><span onClick={() => tousecase(obj.Title, obj.Team, obj.Email)} style={{ cursor: "pointer" }}>Add Usecase</span></td>
                   <td style={{ cursor: "pointer" }}><span onClick={() => tousecaseReadEdit(obj.Title, obj.Email)}>View usecase</span></td>
                 </tr>
-              ))}
+              ))
+            )}
             </tbody>
           </table>
         )}

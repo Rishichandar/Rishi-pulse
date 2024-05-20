@@ -11,6 +11,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useSelector } from "react-redux";
 import { BiTask } from "react-icons/bi";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 export const UsecaseReadEdit = () => {
     const location = useLocation();
@@ -27,7 +28,7 @@ export const UsecaseReadEdit = () => {
                 const response = await axios.get(`http://localhost:4023/usecases?title=${encodeURIComponent(title)}`);
                 setUsecases(response.data);
             } catch (error) {
-                console.error('Error fetching use cases:', error);
+                console.error('Error fetching use cases:', error);  
             }
         };
         fetchUsecases();
@@ -116,6 +117,9 @@ export const UsecaseReadEdit = () => {
 
     return (
         <>
+        <span id="your-info1">
+          Usecases<IoMdArrowDropdown id="icon1" />
+        </span>
             <Stack spacing={2} direction="row">
                 {Roleid === 1 ? (
                     <Button id='admin-back-btn' variant="outlined" onClick={adminBack}>Back</Button>
