@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { FaHome, FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import { RiAdminFill } from "react-icons/ri";
-import { BiTask } from "react-icons/bi";
 import { FiMenu, FiArrowLeftCircle } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { LiaProjectDiagramSolid } from "react-icons/lia";
-import { ImProfile } from "react-icons/im";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 const Sidebar1 = () => {

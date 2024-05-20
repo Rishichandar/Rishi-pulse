@@ -29,7 +29,7 @@ function UserMenu() {
   const auth = useSelector((state) => state.auth.isAuthenticated);
 
   const data = useSelector((state) => state.auth.user);
-  const handleLogout = () => {
+  const handleLogout = () => {  
     dispatch(logout());
     dispatch(resetTimer());
     navigate("/");

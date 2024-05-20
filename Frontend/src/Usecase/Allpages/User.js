@@ -278,15 +278,9 @@ function User() {
           <span onClick={closeToggleBar}><IoClose /></span>
         </div>
       </div>
-      {/* <div className={`circle ${isBlinking ? 'blink' : ''}`} onClick={addProject}>
-        <GoPlus size={40} color="white" />
-      </div> */}
      {!editMode && (
         <div>
-          <span className={`${isBlurAnimating ? 'blur-animation' : ''}`} id="add-project">
-            Add project
-          </span>
-          <div className="circle" onClick={addProject}>
+          <div className="circle" id="add-button" onClick={addProject}>
             <GoPlus size={40} color="white" />
           </div>
         </div>

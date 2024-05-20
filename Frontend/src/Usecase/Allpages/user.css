@@ -487,9 +487,28 @@
       }
     }
 
-    #add-project{
+    /* #add-project{
       position: relative;
       left: 1225px;
       top: 90px;
       font-size: 16px;
+    } */
+
+    #add-button:hover::after {
+      content: "Add Project";
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(20, 76, 230, 0.7);
+      color: rgb(255, 255, 255);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      padding: 8px;
+      white-space: nowrap;
+      transition: all 0.4ms ease; /* Adds a smooth transition effect */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 999; /* Ensures the edit text appears above other elements */
     }
+   

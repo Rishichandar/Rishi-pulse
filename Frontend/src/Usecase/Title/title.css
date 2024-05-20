@@ -1,6 +1,4 @@
-/*  */
- /* border: 1px groove rgb(254, 255, 254); 
-    background-color: #f5f8f5; */
+
 
     #logo1{
         width: 120px;
@@ -79,12 +77,10 @@
        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        letter-spacing: 1px;
        font-weight: bold;
-       /* font-family: TWK Everett, Helvetica, Arial, sans-serif; */
-       
+      
       
        
-    }
-    /* font-family: Poppins, Roboto, Helvetica, Arial, sans-serif; */
+    } 
     .tag{
         color: #2db35c;
         font-size:230%;
@@ -95,7 +91,7 @@
         line-height: 55px;
        
     }
-     /* font-family: "Nunito Sans", sans-serif; */
+     
       
     #info-cont{
        border: 1px groove rgb(180, 185, 180);
@@ -216,10 +212,7 @@
        font-weight: 500;
        color:#7be29a;
        font-family: Poppins, Roboto, Helvetica, Arial, sans-serif;
-       background: #454eca;
-       background: linear-gradient(to right,  #5b7595 100%, #5b7595 100%);
-       -webkit-background-clip: text;
-       -webkit-text-fill-color: transparent;
+       color:  #5b7595;
     }
 
     #get-started{

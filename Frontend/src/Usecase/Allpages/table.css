@@ -38,8 +38,8 @@
   border: none;
   
   background-color: #fff;
-  /* border-radius: 25px; */
-  /* box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2); */
+  border-radius: 25px;
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
   outline: none;
   color: rgb(177, 171, 171);
   position: relative;
@@ -63,14 +63,14 @@
   }
   #search-icon{
     position: relative;
-    top: 34px;
-    left:95px;
+    top: 30px;
+    left:99px;
     color: rgb(119, 116, 116);
   }
   #search-close{
     position: relative;
-    top: 37px;
-    left: 370px;
+    top: 32px;
+    left: 363px;
   }
 
   
@@ -366,8 +366,8 @@
  #search1{
   position: relative;
   top: 40px;
-  left: 980px;
-  color: rgb(100, 97, 97);
+  left: 960px;
+  color: rgb(148, 143, 143);
  }
  #usecase-nav{
   cursor: pointer;
