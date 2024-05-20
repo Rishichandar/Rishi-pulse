@@ -80,9 +80,19 @@ function Usecase() {
   const email = location.state?.email;
   const navigate = useNavigate();
   //formdata
+  // const [formData, setFormData] = useState({
+  //   summary: '',
+  //   team: [],
+  //   status: '',
+  //   enddate: '',
+  //   reporterid: email,
+  //   attachment: '',
+  //   description: '',
+  //   title:title,
+  // });
   const [formData, setFormData] = useState({
     summary: '',
-    team: [],
+    team: '',
     status: '',
     enddate: '',
     reporterid: email,
@@ -119,15 +129,22 @@ const handleFocus = () => {
 const handleBlur = () => {
   setIsFocused(false);
 };
+  // const handleChange1 = (event) => {
+  //   const {
+  //     target: { value },
+  //   } = event;
+  //   const selectedNames = typeof value === 'string' ? value.split(',') : value;
+  //   // Convert selected names array to a comma-separated string
+  //   const formattedValue = typeof value === 'string' ? value : selectedNames.join(',');
+  //   setPersonName(selectedNames); 
+  //   handleChange2({ target: { name: 'team', value: formattedValue }});
+  // };
   const handleChange1 = (event) => {
     const {
       target: { value },
     } = event;
-    const selectedNames = typeof value === 'string' ? value.split(',') : value;
-    // Convert selected names array to a comma-separated string
-    const formattedValue = typeof value === 'string' ? value : selectedNames.join(',');
-    setPersonName(selectedNames); 
-    handleChange2({ target: { name: 'team', value: formattedValue }});
+    setPersonName(value); 
+    handleChange2({ target: { name: 'team', value }});
   };
   const handleChange2 = (event) => {
     const { name, value } = event.target;
@@ -239,7 +256,7 @@ const handleBlur = () => {
           <br></br>
        
           <tr>
-          <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 10, right: 8 }}>
+          {/* <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 10, right: 8 }}>
           <InputLabel 
            id="demo-multiple-name-label" 
            style={{ fontSize: '14px' }}
@@ -272,11 +289,45 @@ const handleBlur = () => {
           </MenuItem>
           ))}
           </Select>
-         </FormControl>
+         </FormControl> */}
+         <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 10, right: 8 }}>
+  <InputLabel 
+   id="demo-single-name-label" 
+   style={{ fontSize: '14px' }}
+    >
+   Assignee{isFocused && '*'}
+   </InputLabel>
+     
+   <Select
+   name='team'
+   id='sel'
+   labelId="demo-single-name-label"
+   style={{ height: "53px" }}
+   value={personName}
+   onChange={handleChange1}
+
+   input={<OutlinedInput label="Assignee" style={{ fontSize: '10px', fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"  }} />}
+   MenuProps={MenuProps}
+   onFocus={handleFocus}
+   onBlur={handleBlur}
+  
+  >
+  {names.map((name) => (
+  <MenuItem
+    key={name}
+    value={name}
+    style={getStyles(name, personName, theme)}
+  >
+    {name}
+  </MenuItem>
+  ))}
+  </Select>
+</FormControl>
+
           </tr>
           <tr>
           <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 7, right: 8 }}>
-        <InputLabel id="demo-simple-select-label" style={{fontSize:"13px"}}>Status</InputLabel>
+        <InputLabel id="demo-simple-select-label" style={{fontSize:"14px"}}>Status{isFocused && '*'}</InputLabel>
         
         <Select
           labelId="demo-simple-select-label"

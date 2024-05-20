@@ -239,7 +239,7 @@ function User() {
                   <td>{obj.Tools}</td>
                   <td className="edit" onClick={() => handleEdit(obj)}><MdEdit size={18} style={{ color: "rgb(97, 94, 94)" }} /></td>
                   <td style={{ cursor: "pointer" }}><span onClick={() => tousecase(obj.Title, obj.Team, obj.Email)} style={{ cursor: "pointer" }}>Add Usecase</span></td>
-                  <td style={{ cursor: "pointer" }}><span onClick={() => tousecaseReadEdit(obj.Title, obj.Email)}>Edit usecase</span></td>
+                  <td style={{ cursor: "pointer" }}><span onClick={() => tousecaseReadEdit(obj.Title, obj.Email)}>View usecase</span></td>
                 </tr>
               ))}
             </tbody>
@@ -276,7 +276,8 @@ function User() {
         <GoPlus size={40} color="white" />
       </div> */}
       <div >
-        <div  className={`circle ${isBlurAnimating ? 'blur-animation' : ''}`} onClick={addProject} >  <GoPlus size={40} color="white" /></div>
+         <span  className={` ${isBlurAnimating ? 'blur-animation' : ''}`} id="add-project">Add project</span>
+        <div  className="circle" onClick={addProject} >  <GoPlus size={40} color="white" /></div>
       </div>
 
       

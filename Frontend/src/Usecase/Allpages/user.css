@@ -435,27 +435,7 @@
       z-index: 999; /* Ensures the edit text appears above other elements */
     }
    
-    .task {
-      position: relative;
-      cursor: pointer;
-    }
     
-    .task:hover::after {
-      content: "View Task";
-      position: absolute;
-      top: 70%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(43, 91, 223, 0.7);
-      color: rgb(255, 255, 255);
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      white-space: nowrap;
-      transition: all 0.4ms ease; /* Adds a smooth transition effect */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      z-index: 999; /* Ensures the edit text appears above other elements */
-    }
    
     #your-info{
       position: relative;
@@ -470,12 +450,13 @@
     }
 
     .circle {
-      width: 60px; /* Adjust size as needed */
-      height: 60px; /* Adjust size as needed */
+      width: 47px; /* Adjust size as needed */
+      height: 47px; /* Adjust size as needed */
       border-radius: 50%; /* Makes the div a circle */
       background-color: rgb(19, 230, 54); /* Example background color */
+      opacity: 0.9;
       position: relative;
-      left: 1240px;
+      left: 1242px;
       top: 105px;
       display: flex;
       justify-content: center;
@@ -502,8 +483,13 @@
         filter: blur(0px);
       }
       to {
-        filter: blur(2px); /* Adjust blur radius as needed */
+        filter: blur(2px); 
       }
     }
 
-    
+    #add-project{
+      position: relative;
+      left: 1225px;
+      top: 90px;
+      font-size: 16px;
+    }

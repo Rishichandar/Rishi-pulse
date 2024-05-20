@@ -133,7 +133,7 @@ export const UsecaseReadEdit = () => {
                         <th>Team</th>
                         <th>Status</th>
                         <th>End Date</th>
-                        {Roleid !== 1 && <th colSpan="3">Actions</th>}
+                        {Roleid !== 1 && <th colSpan="4">Actions</th>}
                     </tr>
                 </thead>
                 <tbody>
