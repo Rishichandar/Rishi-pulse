@@ -139,17 +139,9 @@
     
    
   }
-  #mini{
-    position: absolute;
-    top: 150px;
-    right: 1px;
-    max-height: 100px;
-    overflow-x:auto;
-    
-    
-  }
+ 
   #mini-tab{
-    width: 700px; 
+     width: 800px; 
   
      position: absolute;
      top: 150px;
@@ -161,20 +153,22 @@
   
   table,th,td{
     border: 1px groove #c6cec8;
-    border: 1px solid rgba(145, 140, 140, 0.3);
-
+    /* border: 1px solid rgba(145, 140, 140, 0.3); */
+    padding: 15px;
     border-collapse: collapse;
-   padding: 10px;
+  
 
     
 
   }
   th{
-    padding: 12px;
+    padding: 14px;
     
   }
   table{
     border-radius: 10px;
+    
+   
   }
   #tddd{
     /* border: 1px groove rgb(71, 232, 100); */

@@ -74,9 +74,9 @@
   #table{
   position: relative;
   bottom:40px;
-  left:160px;
+  left:180px;
  background-color: rgb(255, 255, 255);
-  width: 1170px;
+  width: 1100px;
   
   
   
@@ -95,7 +95,7 @@
     } */
     #box {
       position: absolute;
-      top: 110px;
+      top: 140px;
       right: 440px;
       width: 400px;
       height: 400px;
@@ -280,14 +280,14 @@
     background-color: #3d69c9;
   }
    th{
-     color: rgb(122, 118, 118);
+     color: rgb(49, 47, 47);
      font-size: 13px;
-      background-color: rgb(214, 208, 208);
+     background-color: rgb(191, 192, 194);
   
   }
   td{
       text-align: center;
-      font-size: 13px;
+      font-size: 12px;
         
     } 
     /* #search-icon{
@@ -381,16 +381,7 @@
       
     
     }
-    #mini1{
-      position: absolute;
-      top: 100px;
-      right: 2px;
-      max-height: 100px;
-      overflow-x:auto;
-     
-      
-      
-    }
+   
     .edit {
       position: relative;
       cursor: pointer;
@@ -440,7 +431,7 @@
     #your-info{
       position: relative;
       top: 100px;
-      left: 165px;
+      left: 185px;
       color: rgb(33, 33, 233);
     }
     #icon1{
