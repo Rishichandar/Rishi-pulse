@@ -13,6 +13,23 @@ export const forgotUser = async (data) => {
     return error.response.data;
   }
 };
+
+// !  for Regester Email
+export const regEmailSender = async (email, password) => {
+  try {
+    const response = await api.post("/user/reg", {
+      Email: email,
+      Password: password,
+    });
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    // return error.response.data;
+    return error;
+  }
+};
+
 export const fetchSingleData = async (data) => {
   try {
     const response = await api.get(`/singleData?email=${data}`);
@@ -32,7 +49,6 @@ export const fetchAllData = async (data) => {
     return [];
   }
 };
-
 export const loginUser = async (data) => {
   try {
     const response = await api.post("/user/login", data);
@@ -81,5 +97,18 @@ export const loginUserReset = async (data) => {
     return response;
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const getActivities = async (email, filter) => {
+  let filters = filter.map((x) => `'${x}'`).join(",");
+  try {
+    const response = await api.get(
+      `/GetActivity?Email=${email}&Filter=${filters}`
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
 };

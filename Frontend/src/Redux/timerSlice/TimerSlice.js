@@ -7,7 +7,7 @@ export const TimerSlice = createSlice({
     incrementTimer: (state, action) => {
       state.currentTimer += 1;
       state.interval = action.payload;
-      console.log(state.interval);
+      // console.log(state.interval);
     },
     resetTimer: (state) => {
       state.currentTimer = 0;
@@ -21,9 +21,17 @@ export const TimerSlice = createSlice({
       state.timerActive = false;
       clearInterval(state.interval);
     },
+    setCurrentTimer: (state, action) => {
+      state.currentTimer = action.payload;
+    },
   },
 });
 
-export const { incrementTimer, resetTimer, startTimer, endTimer } =
-  TimerSlice.actions;
+export const {
+  incrementTimer,
+  resetTimer,
+  startTimer,
+  endTimer,
+  setCurrentTimer,
+} = TimerSlice.actions;
 export default TimerSlice.reducer;

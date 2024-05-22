@@ -2,7 +2,6 @@ import React from "react";
 import { Box, TextField, Button, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert2";
-import { toast } from "react-toastify";
 
 import { forgotUser } from "../../HTTPHandler/api";
 import { Link } from "react-router-dom";
