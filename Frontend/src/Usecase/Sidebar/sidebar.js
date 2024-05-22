@@ -53,12 +53,7 @@ const Sidebar1 = () => {
               </span>
              <Link to="/main" style={{textDecoration:"none"}}> <p className="navbar-item">Attendance</p></Link>
             </button>
-            {/* <button type="button" onClick={handlePortfolioManagementClick}>
-              <span >
-              <ImProfile size={20} />
-              </span>
-              <p className="navbar-item">Portfolio</p>
-            </button> */}
+            
             <button type="button" onClick={handleProjectManagementClick}>
               <span>
               <LiaProjectDiagramSolid size={22}/>
@@ -68,38 +63,14 @@ const Sidebar1 = () => {
             {/* while clicking AttendanceManagement */}
             {selectedItem === "AttendanceManagement" && (
               <>
-              {/* <div id="proj-div1">
-                <Link to="/attendance-home" style={{ textDecoration: "none" }}>
-                  <button type="button" id="nav-button">
-                    <span className="navbar-item1">
-                      <FaHome />
-                    </span>
-                    <p className="navbar-item1">Home</p>
-                  </button>
-                </Link>
-                <Link to="/attendance-admin" style={{ textDecoration: "none" }}>
-                  <button type="button"id="nav-button">
-                    <span className="material-symbols-outlined">
-                      <RiAdminFill />
-                    </span>
-                    <p className="navbar-item">Attendance Admin</p>
-                  </button>
-                </Link>
-                </div> */}
+              
               </>
             )}
             {/* project management clicking */}
             {selectedItem === "ProjectManagement" && (
               <>
                <div id="proj-div3">
-                {/* <Link to="/home" style={{ textDecoration: "none" }}className="material-symbols-outlined">
-                  <button type="button" id="nav-button">
-                    <span >
-                      <FaHome />
-                    </span>
-                    <p className="navbar-item2">Home</p>
-                  </button>
-                </Link> */}
+                
                 {roleid === 1 && (
                 <Link to="/admin" style={{ textDecoration: "none" }}className="material-symbols-outlined">
                   <button type="button"id="nav-button">
@@ -118,14 +89,7 @@ const Sidebar1 = () => {
                     <p className="navbar-item2">Details</p>
                   </button>
                 </Link>
-                {/* <Link to="/task" style={{ textDecoration: "none" }} className="material-symbols-outlined">
-                  <button type="button"id="nav-button">
-                    <span>
-                      <BiTask />
-                    </span>
-                    <p className="navbar-item2">Task</p>
-                  </button>
-                </Link> */}
+               
                 </div> 
               </>
             )}

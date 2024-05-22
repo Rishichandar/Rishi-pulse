@@ -7,9 +7,6 @@
   position: relative;
   left: 150px;
   top: 40px;
-  /* border-color:hsl(0, 9%, 94%) ;
-  background-color: hsl(0, 0%, 99%);
-  box-shadow: 2px 2px 7px 0 rgba(121, 118, 118, 0.2); */
 }
 #tot-form{
 position: relative;
@@ -17,7 +14,7 @@ left: 65px;
 
 } 
 #h4{
-  /* #17A248 */
+ 
   
   color: #5c5c5e ;
   font-family: "Nunito Sans", sans-serif;
@@ -45,7 +42,6 @@ font-size: 13px;
 color: #4c9ee0;
 font-size: 1.6rem;
 position: relative;
-/* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 left:-100px;
 top: -5px;
 
@@ -155,17 +151,6 @@ top: -5px;
   color: #c6c6ca;
   letter-spacing: 2px;
 }
-/* create table projectinfo(
-Id INT NOT NULL auto_increment ,
-Project_Id varchar(15) not null primary key auto_increment,
-Title varchar(50),
-Description varchar(300),
-Team varchar(150),
-Startdate date,
-Deadline date,
-Tools varchar(100),
-Files Blob
-); */
 
 #back-btn{
  

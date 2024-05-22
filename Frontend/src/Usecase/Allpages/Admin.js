@@ -120,9 +120,7 @@ const Admin = () => {
 	// for  table blurring
 	
 	const [showTab1, setShowTab1] = useState(true);
-	// const toggleTabs = () => {
-	// 	setShowTab1(!showTab1);
-	//   };
+
 	  const [error, setError] = useState(null);
 	  const[taskData,setTaskData]=useState([])
 	  const handleTaskButtonClick = (title,email) => {
@@ -131,25 +129,7 @@ const Admin = () => {
 		navigate("/usecaseReadEdit", { state: { title,email} });
 	   
 	  };
-	//   const handleTaskButtonClick = async (title) => {
-	// 	console.log(title);
-	// 	try {
-	// 	  const response = await fetch(`http://localhost:4023/task_details/${title}`);//http://localhost:8000/task_details
-	// 	  if (!response.ok) {
-	// 		throw new Error('Failed to fetch task data');
-	// 	  }
-	//      console.log(response);
-	// 	  const jsonData = await response.json();
-	// 	  setTaskData(jsonData);
-	// 	  setToggleBarOpen(true);
-	// 	  setShowTab1(!showTab1);
-		 
-	// 	  console.log(jsonData)
-	// 	  setError(null);
-	// 	} catch (error) {
-	// 	 toast.error("Employee didnt add task")
-	// 	}
-	//   };
+	
 	  //for search project
 	  const [projectData, setProjectData] = useState(null);
 	  const [projectTitle, setprojectTitle] = useState('');

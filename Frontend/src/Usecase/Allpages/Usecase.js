@@ -80,16 +80,7 @@ function Usecase() {
   const email = location.state?.email;
   const navigate = useNavigate();
   //formdata
-  // const [formData, setFormData] = useState({
-  //   summary: '',
-  //   team: [],
-  //   status: '',
-  //   enddate: '',
-  //   reporterid: email,
-  //   attachment: '',
-  //   description: '',
-  //   title:title,
-  // });
+ 
   const [formData, setFormData] = useState({
     summary: '',
     team: '',
@@ -129,16 +120,7 @@ const handleFocus = () => {
 const handleBlur = () => {
   setIsFocused(false);
 };
-  // const handleChange1 = (event) => {
-  //   const {
-  //     target: { value },
-  //   } = event;
-  //   const selectedNames = typeof value === 'string' ? value.split(',') : value;
-  //   // Convert selected names array to a comma-separated string
-  //   const formattedValue = typeof value === 'string' ? value : selectedNames.join(',');
-  //   setPersonName(selectedNames); 
-  //   handleChange2({ target: { name: 'team', value: formattedValue }});
-  // };
+ 
   const handleChange1 = (event) => {
     const {
       target: { value },
@@ -256,40 +238,7 @@ const handleBlur = () => {
           <br></br>
        
           <tr>
-          {/* <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 10, right: 8 }}>
-          <InputLabel 
-           id="demo-multiple-name-label" 
-           style={{ fontSize: '14px' }}
-            >
-           Team{isFocused && '*'}
-           </InputLabel>
-             
-           <Select
-           name='Team'
-           id='sel'
-           labelId="demo-multiple-name-label"
-           style={{ height: "53px" }}
-           multiple
-          value={personName}
-          onChange={handleChange1}
-
-          input={<OutlinedInput label="Name" style={{ fontSize: '10px', fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"  }} />}
-           MenuProps={MenuProps}
-           onFocus={handleFocus}
-          onBlur={handleBlur}
-          
-          >
-          {names.map((name) => (
-          <MenuItem
-            key={name}
-            value={name}
-            style={getStyles(name, personName, theme)}
-          >
-            {name}
-          </MenuItem>
-          ))}
-          </Select>
-         </FormControl> */}
+        
          <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 10, right: 8 }}>
   <InputLabel 
    id="demo-single-name-label" 

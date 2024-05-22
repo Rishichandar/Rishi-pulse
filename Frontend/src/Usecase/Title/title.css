@@ -236,13 +236,13 @@
         content: "";
         position: absolute;
         top: 0;
-        left: 10px;
+        left: 14px;
         display: block;
         border-radius: 50px;
        
         /* #b1dae7 */
-        background: #1ed64c;
-        width: 130px;
+        background: #1d5be0;
+        width: 40px;
         height: 40px;
         transition: all 0.3s ease;
       }
@@ -253,7 +253,7 @@
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 2px;
-        color: #ffffff;
+        color: #413e3e;
         text-transform: uppercase;
         position: relative;
         left: 5px;
@@ -262,21 +262,22 @@
       
       .cta svg {
         position: relative;
-        top: 3px;
+        top: 2px;
         right: 10px;
         margin-left: 20px;
         fill: none;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke: #fbfbfc;
-        stroke-width: 2;
+        stroke: #444141;
+        stroke-width: 1;
         transform: translateX(-5px);
         transition: all 0.3s ease;
       }
       
       .cta:hover:before {
-        width: 90%;
-        background: #0df748 ;
+        width: 80%;
+        background: #0be041 ;
+        color: white;
         
         /* #36ca36  */
       }

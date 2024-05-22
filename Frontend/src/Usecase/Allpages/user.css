@@ -1,33 +1,14 @@
 .cont{
-  /* border: 1px groove rgb(124, 231, 156); */
+ 
   height: 200px;
   width: 1090px;
   position: relative;
   left: 150px;
   top: 120px;
-  /* background: hwb(0 97% 3% / 0.904); */
   border-radius: 15px;   
-  /* box-shadow: 0px 187px 75px rgba(153, 150, 150, 0.01), 0px 105px 63px rgba(153, 150, 150, 0.01), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(153, 150, 150, 0.01), 0px 0px 0px rgba(153, 150, 150, 0.01); */
+ 
   }
-  /* id */
-  /* #user-ID{
-  text-align: center;
-  width: 300px;
-  height:40px;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
-  outline: none;
-  color: rgb(177, 171, 171);
-  font-family: 'montserrat','sans-serif';
-  position: relative;
-  top:-55px;
-  left:20px;
-  border-color: #e3e4e3;
-  
-  
-  } */
+
   #project-title{
     text-align: center;
     width: 190px;
@@ -56,27 +37,14 @@
       border-radius: 20px;   
       box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
       }
-  /* #submit{
-      width: 110px;
-      height: 35px;
-      position: relative;
-      top:50px;
-      left: 70px;
-      border-radius: 3px;
-      border-color: rgb(134, 172, 197);
-      border-style: groove;
-      font-weight: 500;
-      cursor: pointer;
-      background-color: #e1e5e9;
-      
-  } */
-  /* table css */
+ 
   #table{
   position: relative;
   bottom:40px;
   left:180px;
  background-color: rgb(255, 255, 255);
-  width: 1100px;
+  width: 1150px;
+ 
   
   
   
@@ -84,15 +52,6 @@
   
   }
   
-  /* #box{
-    position: absolute;
-    top: 200px;
-    right: 500px;
-    width: 390px;
-    height:380px;
-    border-radius: 15px;
-    border: 1px  solid rgb(160, 207, 238);
-    } */
     #box {
       position: absolute;
       top: 140px;
@@ -280,21 +239,17 @@
     background-color: #3d69c9;
   }
    th{
-     color: rgb(49, 47, 47);
-     font-size: 13px;
-     background-color: rgb(191, 192, 194);
-  
+     color: rgb(255, 255, 255);
+     font-size: 12px;
+     background-color: rgb(64, 64, 201);
+    
   }
   td{
       text-align: center;
-      font-size: 12px;
+      font-size: 14px;
         
     } 
-    /* #search-icon{
-      position: relative;
-      top: -50px;
-      right: 15px;
-    } */
+  
     #search-icon1{
       position: relative;
       top: 49px;
@@ -343,16 +298,7 @@
     .blur-background {
       filter: blur(5px); /* Adjust the blur intensity as needed */
     }
-    /* #detail{
-      position: absolute;
-      top: 250px;
-      margin-left: -30px;
-      width: 590px;
-      line-height: 40px;
-      font-size: 1.5rem;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    word-spacing: ;
-    } */
+    
     #back-button{
       position: absolute;
       top: 13px;
@@ -458,17 +404,7 @@
       animation: blur-and-normal 1s infinite;
     }
     
-    /* @keyframes blur-and-normal {
-      0% {
-        filter: blur(0);
-      }
-      50% {
-        filter: blur(1px);
-      }
-      100% {
-        filter: blur(0);
-      }
-    } */
+    
     @keyframes blur-and-normal {
       from {
         filter: blur(0px);
@@ -478,13 +414,7 @@
       }
     }
 
-    /* #add-project{
-      position: relative;
-      left: 1225px;
-      top: 90px;
-      font-size: 16px;
-    } */
-
+    
     #add-button:hover::after {
       content: "Add Project";
       position: absolute;
