@@ -52,9 +52,9 @@ export const Loginpage = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Box
             display={"flex"}
-            height={350}
+            height={400}
             flexDirection={"column"}
-            maxWidth={400}
+            maxWidth={450}
             justifyContent={"center"}
             alignItems={"center"}
             margin={"auto"}
