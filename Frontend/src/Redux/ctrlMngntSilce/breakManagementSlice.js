@@ -15,9 +15,16 @@ export const breakManagementSlice = createSlice({
     toggleBreak: (state) => {
       state.isBreakIn = !state.isBreakIn;
     },
+    setLunch: (state, action) => {
+      state.isLunchIn = action.payload;
+    },
+    setBreak: (state, action) => {
+      state.isBreakIn = action.payload;
+    },
   },
 });
 
-export const { toggleLunch, toggleBreak } = breakManagementSlice.actions;
+export const { toggleLunch, toggleBreak, setLunch, setBreak } =
+  breakManagementSlice.actions;
 
 export default breakManagementSlice.reducer;

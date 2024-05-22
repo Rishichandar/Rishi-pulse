@@ -25,12 +25,9 @@ export const Loginpage = () => {
         console.log(res);
         if (res.Status === "Success") {
           toast.success("Get ready");
-          //alert(res.Status);
           navigate("/main");
         } else {
           toast.error(res.ErrMessage);
-
-          // alert(res.ErrMessage);
         }
       })
       .catch((error) => {

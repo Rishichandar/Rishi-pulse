@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-// import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import { CheckToken } from "../../HTTPHandler/api";
 import Resetpage from "../ResetPasspage/resetpage";
-// import UserMenu from "../../Component/usermenu";
-// import Content from "../../Component/layout";
 import { useSelector } from "react-redux";
 import Layout from "../../Component/layout";
 
