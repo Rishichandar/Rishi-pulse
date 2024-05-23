@@ -147,7 +147,7 @@ function Usecase() {
         title: title,
       });
       setTimeout(() => {
-        navigate('/usecaseReadEdit');
+        navigate('/usecaseReadEdit', { state: { title} });
       }, 2000);
     } catch (error) {
       console.error('Error adding use case:', error);
@@ -177,7 +177,7 @@ function Usecase() {
   return (
     <>
       <Stack spacing={2} direction="row">
-        <Button id='back-btn' variant="outlined" onClick={back}>Back</Button>
+        <Button id='back-btn4' variant="outlined" onClick={back}>Back</Button>
       </Stack>
       <div id='contain1'>
         <span id='title1'>{typedTitle}</span>

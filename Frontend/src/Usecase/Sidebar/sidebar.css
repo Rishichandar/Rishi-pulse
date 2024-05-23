@@ -5,13 +5,13 @@
 .sidebar-2 {
   position: absolute;
   overflow: hidden;
-  top: 55px;
+  top:69px;
   left: 0;
   width: 55px;
   height: 92%;
   background:#5b7595 ;
   transition: width 0.3s;
-  z-index: 3;
+  z-index: 2;
 }
 
 .sidebar-2.open {
@@ -20,7 +20,7 @@
 
 .sidebar-2 .inner {
   position: absolute;
-  top: 0;
+  top: 35px;
   left: 0;
   width: 100px;
 }
@@ -125,6 +125,7 @@ top: 50px;
 .open-nav{
 position: relative;
 right: -2px;
+
 }
 .material-symbols-outlined{
 

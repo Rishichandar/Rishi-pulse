@@ -49,8 +49,8 @@ top: -5px;
 }
 
 #task-form{
-  margin-top: 50px;
-  margin-left: 500px;
+  margin-top: 90px;
+  margin-left:430px;
   width: 450px;
   height: 200px;
   border: 1px groove;
@@ -152,10 +152,10 @@ top: -5px;
   letter-spacing: 2px;
 }
 
-#back-btn{
- 
-  top: 60px;
-  left: 1245px;
+#back-btn2{
+  position: relative;
+  top:60px;
+  left: 1180px;
   width: 70px;
   height: 30px;
   text-align: center;

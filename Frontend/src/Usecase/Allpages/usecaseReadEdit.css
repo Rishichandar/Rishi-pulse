@@ -32,6 +32,7 @@
 }
 #mini1{
   position: absolute;
+  width: 400px;
   top: 100px;
   left: 5px;
   max-height: 100px;
@@ -152,10 +153,10 @@ bottom: 50px;
   background-color: rgb(32, 207, 61);
 }
 /* for back button */
-#back-btn{
- 
-  top: 20px;
-  left: 1250px;
+#back-btn3{
+  position: relative;
+  top:60px;
+  left: 1180px;
   width: 70px;
   height: 30px;
   text-align: center;
@@ -182,12 +183,13 @@ th{
  
 }
 #usecase-table{
-  width:85%;
+  width:1050px;
   border-collapse: collapse;
   position: relative;
   top: 130px;
   left: 165px;
   text-align: center;
+  height: 180px;
   
 }
 .task {
@@ -261,7 +263,7 @@ th{
 }
 .toggle-bar {
   position: fixed;
-  top: 55px;
+  top: 65px;
   right: -410px; /* initially off-screen */
   height: 100%;
   width: 410px;

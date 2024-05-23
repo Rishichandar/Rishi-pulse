@@ -124,7 +124,7 @@ export const UsecaseReadEdit = () => {
                 {Roleid === 1 ? (
                     <Button id='admin-back-btn' variant="outlined" onClick={adminBack}>Back</Button>
                 ) : (
-                    <Button id='back-btn' variant="outlined" onClick={back}>Back</Button>
+                    <Button id='back-btn3' variant="outlined" onClick={back}>Back</Button>
                 )}
             </Stack>
 
