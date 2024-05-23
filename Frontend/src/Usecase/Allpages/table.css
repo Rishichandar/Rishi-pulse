@@ -11,6 +11,48 @@
   left: 145px;
   padding: 10px;
 }
+.viewusecase1 {
+  position: relative;
+  cursor: pointer;
+}
+
+.viewusecase1:hover::after {
+  content: "view usecase";
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(43, 91, 223, 0.7);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: all 0.4ms ease; /* Adds a smooth transition effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Ensures the edit text appears above other elements */
+}
+.viewsearch {
+  position: relative;
+  cursor: pointer;
+}
+
+.viewsearch:hover::after {
+  content: "search";
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(84, 118, 212, 0.7);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  transition: all 0.4ms ease; /* Adds a smooth transition effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Ensures the edit text appears above other elements */
+}
 #tab2{
   padding:1px;
   overflow: scroll; /* Changed to overflow-y */
@@ -64,13 +106,13 @@
   #search-icon{
     position: relative;
     top: 20px;
-    left:-40px;
-    color: rgb(119, 116, 116);
+    left:-70px;
+    color: rgb(87, 84, 84);
   }
   #search-close{
     position: relative;
     top: 22px;
-    left: 10px;
+    left: -20px;
   }
 
   
@@ -268,7 +310,7 @@
     border:1px groove ;
     border-color:transparent;
     color: white;
-    border-radius: 5px;
+    border-radius: 20px;
     margin: -0.625rem auto;
     position: relative;
     font-size: 12px;

@@ -4,10 +4,10 @@ const Connection = mysql.createConnection({
   // host: "192.168.0.135",
   host: "localhost",
   user: "root",
-  // password: "rishi@123",
-  password: "root",
-  database: "attendance_app", // Corrected the database name here
-  // database: "pulsedb", // Corrected the database name here
+  password: "rishi@123",
+  // password: "root",
+  // database: "attendance_app", // Corrected the database name here
+  database: "pulse", // Corrected the database name here
 });
 
 Connection.connect((err) => {

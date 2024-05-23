@@ -209,6 +209,7 @@ function Projectdetails() {
   value={inputValue.Email}
   sx={{
     width: "300px",
+   
     mb: 1,
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
@@ -251,7 +252,9 @@ function Projectdetails() {
     bottom: -40, 
     left: 30, 
     fontSize: '12px', 
-    color: 'white !important' // Change the color of the value
+    color: 'white', // Change the color of the value
+    background:'white',
+    borderRadius:'5px'
   }}
   InputLabelProps={{
     style: {
@@ -259,7 +262,7 @@ function Projectdetails() {
       fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
     }
   }}
-  label="Email"
+  
 />
 
 

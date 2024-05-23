@@ -10,7 +10,8 @@ import { BiTask } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
-
+import { IoMdPersonAdd } from "react-icons/io";
+import { FcViewDetails } from "react-icons/fc";
 
 function User() {
   const [userData, setUserData] = useState(null);
@@ -243,8 +244,9 @@ function User() {
                   <td>{obj.Deadline.substring(0, 10)}</td>
                   <td>{obj.Tools}</td>
                   <td className="edit" onClick={() => handleEdit(obj)}><MdEdit size={18} style={{ color: "rgb(97, 94, 94)" }} /></td>
-                  <td style={{ cursor: "pointer" }}><span onClick={() => tousecase(obj.Title, obj.Team, obj.Email)} style={{ cursor: "pointer" }}>Add Usecase</span></td>
-                  <td style={{ cursor: "pointer" }}><span onClick={() => tousecaseReadEdit(obj.Title, obj.Email)}>View usecase</span></td>
+                  <td className="usecase" style={{ cursor: "pointer" }}><span onClick={() => tousecase(obj.Title, obj.Team, obj.Email)} style={{ cursor: "pointer" }}><IoMdPersonAdd size={17} /></span></td>
+                  <td className="viewusecase"  style={{ cursor: "pointer" }}><span onClick={() => tousecaseReadEdit(obj.Title, obj.Email)}><FcViewDetails size={17} />
+</span></td>
                 </tr>
               ))
             )}

@@ -106,28 +106,51 @@ app.post("/project_infos", (req, res) => {
   });
 });
 
+// app.post("/taskdetails", (req, res) => {
+//   const { taskDetails, emailid, Title, summary } = req.body;
+//   const currentDate = new Date();
+//   const formattedDate = currentDate.toISOString().slice(0, 10);
+//   const formattedTime = currentDate.toISOString().slice(11, 19);
+
+//   const query =
+//     "INSERT INTO taskdetails (Date, Time, Dailytask, Email, Title, usecasetitle) VALUES (?, ?, ?, ?, ?,?)";
+//   db.query(
+//     query,
+//     [formattedDate, formattedTime, taskDetails, emailid, Title, summary],
+//     (err, results) => {
+//       if (err) {
+//         console.error("Error executing MySQL query:", err);
+//         res.status(500).json({ error: "Failed to add task" });
+//         return;
+//       }
+//       console.log("Task added");
+//       res.status(200).json({ message: "Task added successfully" });
+//     }
+//   );
+// });
 app.post("/taskdetails", (req, res) => {
   const { taskDetails, emailid, Title, summary } = req.body;
+  
+  // Get current system date and time
   const currentDate = new Date();
-  const formattedDate = currentDate.toISOString().slice(0, 10);
-  const formattedTime = currentDate.toISOString().slice(11, 19);
+  const formattedDate = currentDate.toISOString().slice(0, 10); // Format: YYYY-MM-DD
+  const formattedTime = currentDate.toTimeString().slice(0, 8); // Format: HH:MM:SS
 
-  const query =
-    "INSERT INTO taskdetails (Date, Time, Dailytask, Email, Title, usecasetitle) VALUES (?, ?, ?, ?, ?,?)";
-  db.query(
-    query,
-    [formattedDate, formattedTime, taskDetails, emailid, Title, summary],
-    (err, results) => {
-      if (err) {
-        console.error("Error executing MySQL query:", err);
-        res.status(500).json({ error: "Failed to add task" });
-        return;
-      }
-      console.log("Task added");
-      res.status(200).json({ message: "Task added successfully" });
+  // SQL query to insert task details
+  const query = "INSERT INTO taskdetails (Date, Time, Dailytask, Email, Title, usecasetitle) VALUES (?, ?, ?, ?, ?, ?)";
+
+  // Execute the query with the provided values
+  db.query(query, [formattedDate, formattedTime, taskDetails, emailid, Title, summary], (err, results) => {
+    if (err) {
+      console.error("Error executing MySQL query:", err);
+      res.status(500).json({ error: "Failed to add task" });
+      return;
     }
-  );
+    console.log("Task added successfully");
+    res.status(200).json({ message: "Task added successfully" });
+  });
 });
+
 
 //(updated)for view the records and get the data in database
 app.get("/project_info", (req, res) => {

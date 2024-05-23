@@ -13,6 +13,8 @@ import { BiTask } from "react-icons/bi";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
+import { FcViewDetails } from "react-icons/fc";
+
 const Admin = () => {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
@@ -133,21 +135,13 @@ const Admin = () => {
 		<span id='all' style={{ filter: showTab1 ? 'blur(0px)' : 'blur(20px)' }}>All Projects<IoMdArrowDropdown size={15} id='all-icon' /></span>
 		<button onClick={downloadAllCSV1} id='down-al' style={{ filter: showTab1 ? 'blur(0px)' : 'blur(20px)' }}>Download csv</button>
             {/* Existing UI code */}
-            <span id='search1' onClick={toggleSearchBar}><FiSearch size={20} /></span>
+            <span id='search1'  className="viewsearch" onClick={toggleSearchBar}><FiSearch size={23} /></span>
             {showSearchBar && (
                 <>
 				<TextField  id="user-ID" name='ID' value={projectTitle} onChange={handleChange1} label="Search" variant="standard"
-				 style={{marginLeft:'400px'}}
+				 style={{marginLeft:'400px',width:'300px'}}
 				/>
-                    {/* <input
-                        type="text"
-                        id="user-ID"
-                        placeholder="Title"
-                        value={projectTitle}
-                        name='ID'
-                        onChange={handleChange1}
-                    /> */}
-                    {/* <button onClick={searchProject}>Search</button> */}
+                   
                     <span onClick={clearSearch} id='search-close' style={{ color: "grey" }}><IoClose size={20} /></span>
                     <span id='search-icon'  onClick={searchProject}><IoSearchOutline size={16} /></span>
                 </>
@@ -191,7 +185,7 @@ const Admin = () => {
                 </td>
               )}
 			  {/* <BiTask size={20} style={{ marginLeft: "8px", color: "#47d86b" }} /> */}
-              <td><span onClick={() => {handleTaskButtonClick(obj.Title, obj.Email) }} id='usecase-nav'>Usecase</span></td>
+              <td><span className="viewusecase1" onClick={() => {handleTaskButtonClick(obj.Title, obj.Email) }} id='usecase-nav'><FcViewDetails size={20} /></span></td>
               <td><button id='down-btn1' onClick={() => downloadCSV([obj])}><IoCloudDownloadOutline size={25} style={{ color: "grey" }} /></button></td>
             </tr>
           ))}
@@ -211,7 +205,7 @@ const Admin = () => {
             <th>Deadline</th>
             <th>Tech Stack</th>
             <th>Deactivate/Activate</th>
-            <th>Daily Task</th>
+            <th>Usecase</th>
             <th>Download</th>
           </tr>
         </thead>
@@ -231,7 +225,8 @@ const Admin = () => {
                 <button id='deac-btn2' onClick={() => {cancelSoftDelete(projectData.Projectid, 0); notify2(); }} style={{ marginLeft: "15px" }}>Activate</button>
               )}
             </td>
-            <td><span onClick={() => {handleTaskButtonClick(projectData.Title) }} style={{ marginLeft: "5px" }}><BiTask size={20} style={{ marginLeft: "20px", color: "#47d86b" }} /></span></td>
+            {/* <td><span onClick={() => {handleTaskButtonClick(projectData.Title) }} style={{ marginLeft: "5px" }}><BiTask size={20} style={{ marginLeft: "20px", color: "#47d86b" }} /></span></td> */}
+            <td><span  className="viewusecase1" onClick={() => {handleTaskButtonClick(projectData.Title, projectData.Email) }} id='usecase-nav'><FcViewDetails size={20} /></span></td>
             <td><button  id='down-btn1' 
 			 onClick={() => downloadCSV([projectData])}><IoCloudDownloadOutline size={25} style={{ color: "grey" }} /></button></td>
           </tr>

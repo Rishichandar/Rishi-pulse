@@ -33,7 +33,7 @@
 #mini1{
   position: absolute;
   top: 100px;
-  right: 10px;
+  left: 5px;
   max-height: 100px;
   overflow-x:auto;
  
@@ -179,7 +179,7 @@ th{
 #taskdetails{
   position: relative;
   font-size: larger;
-  color: green; 
+ 
 }
 #usecase-table{
   width:85%;
@@ -262,9 +262,9 @@ th{
 .toggle-bar {
   position: fixed;
   top: 55px;
-  right: -420px; /* initially off-screen */
+  right: -410px; /* initially off-screen */
   height: 100%;
-  width: 420px;
+  width: 410px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease; /* animate the right property */
