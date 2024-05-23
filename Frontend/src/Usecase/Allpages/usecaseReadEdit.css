@@ -1,64 +1,53 @@
-
-#details{
+#details {
   position: relative;
   top: 170px;
   left: 370px;
   width: 500px;
-  
 }
- #title2{
-    position: relative;
-    bottom: 20px;
-    left: 5px;
-    font-size: 25px;
-    /* font-family: Georgia, 'Times New Roman', Times, serif; Font-family:  "Zoho_Puvi_Bold";  */
-    letter-spacing: 4px;
-    color:#4072a7 ;
-
-    
+#title2 {
+  position: relative;
+  bottom: 20px;
+  left: 5px;
+  font-size: 25px;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; Font-family:  "Zoho_Puvi_Bold";  */
+  letter-spacing: 4px;
+  color: #4072a7;
 }
-#title3{
+#title3 {
   position: relative;
   bottom: -60px;
   left: 150px;
   font-size: 35px;
-  font-family: Georgia, 'Times New Roman', Times, serif; Font-family:  "Zoho_Puvi_Bold"; 
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Zoho_Puvi_Bold";
   letter-spacing: 4px;
- 
-  font-weight: 500;
-  color:#4072a7 ;
 
-  
+  font-weight: 500;
+  color: #4072a7;
 }
-#mini1{
+#mini1 {
   position: absolute;
   width: 400px;
   top: 100px;
   left: 5px;
   max-height: 100px;
-  overflow-x:auto;
- 
-  
-  
+  overflow-x: auto;
 }
-#datas{
- font-size:1.0rem;
- line-height: 35px;
-letter-spacing: 1px;
-position: relative;
-bottom: 50px;
-;
+#datas {
+  font-size: 1rem;
+  line-height: 35px;
+  letter-spacing: 1px;
+  position: relative;
+  bottom: 50px;
+}
 
-}
-   
-   
-#usecase-edit{
+#usecase-edit {
   position: relative;
   left: 5px;
   top: 0px;
   height: 1.8rem;
-  border:1px groove ;
-  border-color:transparent;
+  border: 1px groove;
+  border-color: transparent;
   color: rgb(46, 45, 45);
   border-radius: 5px;
   margin: -0.625rem auto;
@@ -66,7 +55,6 @@ bottom: 50px;
   transition: all 250ms;
   font-family: sans-serif;
   color: rgb(46, 45, 45);
- 
 }
 #usecase-edit {
   position: relative;
@@ -85,15 +73,15 @@ bottom: 50px;
   border-radius: 4px;
   font-size: 11px;
   white-space: nowrap;
-  transition: all 0.4ms ease; 
+  transition: all 0.4ms ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 999; 
+  z-index: 999;
 }
-#edit-cancel{
+#edit-cancel {
   position: relative;
   left: 0px;
-  top:0px;
-  border-color:transparent;
+  top: 0px;
+  border-color: transparent;
   background-color: white;
   color: rgb(46, 45, 45);
   position: relative;
@@ -101,7 +89,7 @@ bottom: 50px;
   font-family: sans-serif;
   color: rgb(27, 26, 26);
 }
-#edit-cancel{
+#edit-cancel {
   position: relative;
   cursor: pointer;
 }
@@ -118,30 +106,28 @@ bottom: 50px;
   border-radius: 4px;
   font-size: 11px;
   white-space: nowrap;
-  transition: all 0.4ms ease; 
+  transition: all 0.4ms ease;
   z-index: 999;
 }
-#edit-input{
+#edit-input {
   border: none;
- letter-spacing: 1px;
- width: 115px;
- font-size: 13px;
- color: grey;
-
-
+  letter-spacing: 1px;
+  width: 115px;
+  font-size: 13px;
+  color: grey;
 }
-#edit-input:focus{
+#edit-input:focus {
   border: none;
-               /* Set the border color when the input is focused */
+  /* Set the border color when the input is focused */
 }
-#edit-submit{
+#edit-submit {
   position: relative;
-  left:0px;
+  left: 0px;
   top: 0px;
   height: 1.8rem;
-  border:1px groove ;
+  border: 1px groove;
   width: 65px;
-  border-color:transparent;
+  border-color: transparent;
   color: rgb(46, 45, 45);
   border-radius: 5px;
   margin: -0.625rem auto;
@@ -153,44 +139,40 @@ bottom: 50px;
   background-color: rgb(32, 207, 61);
 }
 /* for back button */
-#back-btn3{
+#back-btn3 {
   position: relative;
-  top:60px;
+  top: 60px;
   left: 1180px;
   width: 70px;
   height: 30px;
   text-align: center;
   bottom: 10px;
- 
 }
-#admin-back-btn{
+#admin-back-btn {
   top: 20px;
-  left: 1250px;
+  left: 1180px;
   width: 70px;
   height: 30px;
   text-align: center;
   bottom: 10px;
 }
-th{
+th {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;
-
 }
-#taskdetails{
+#taskdetails {
   position: relative;
   font-size: larger;
- 
 }
-#usecase-table{
-  width:1050px;
+#usecase-table {
+  width: 1050px;
   border-collapse: collapse;
   position: relative;
   top: 130px;
   left: 165px;
   text-align: center;
-  height: 180px;
-  
+  height: 140px;
 }
 .task {
   position: relative;
@@ -258,7 +240,7 @@ th{
   cursor: text;
   pointer-events: auto;
 }
-#add-project{
+#add-project {
   margin-bottom: 30px;
 }
 .toggle-bar {
@@ -280,7 +262,7 @@ th{
   padding: 30px;
 }
 
-#your-info1{
+#your-info1 {
   position: relative;
   top: 100px;
   left: 165px;
