@@ -41,7 +41,12 @@ const UserDataSearch = () => {
       <h2>User Data Search</h2>
       <div>
         <label htmlFor="selectedDate">Select Date:</label>
-        <input type="date" id="selectedDate" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} />
+        <input
+          type="date"
+          id="selectedDate"
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
+        />
       </div>
       <button onClick={handleSearch1}>Search</button>
       {error && <p>{error}</p>}

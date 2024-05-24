@@ -38,13 +38,35 @@ const MenuProps = {
 };
 const names = [
   "Rishi",
-  "Thiru",
+  "Thirumavalavan",
   "Jana",
   "Nandhini",
   "Manoj",
   "Somusundaram",
-  "nj",
+  "nagarajan",
   "abdullah",
+  "Easuraja",
+  "Neha",
+  "Vinotha",
+  "Rokith",
+  "Sowmya",
+  "Sandhiya",
+  "Shanmugamoorthy",
+  "Karthickraja",
+  "Jayapriya",
+  "Gokul",
+  "Elakkiya",
+  "Udhaya",
+  "Akash",
+  "Thirumalaivasan",
+  "Jagadeesan",
+  "Jerusha",
+  "Madhi",
+  "S.Karthick",
+  "Rahul",
+  "Nivetha",
+  "sabari",
+  "Dhandapani",
 ];
 
 function getStyles(name, personName, theme) {
@@ -170,6 +192,7 @@ function Projectdetails() {
                         "& .MuiOutlinedInput-root": {
                           "& fieldset": {
                             borderColor: "white",
+                            borderRadius: "25px", // Adding border radius
                           },
                           "&:hover fieldset": {
                             borderColor: "white",
@@ -215,6 +238,7 @@ function Projectdetails() {
                         "& .MuiOutlinedInput-root": {
                           "& fieldset": {
                             borderColor: "white",
+                            borderRadius: "25px", // Adding border radius
                           },
                           "&:hover fieldset": {
                             borderColor: "white",
@@ -255,7 +279,7 @@ function Projectdetails() {
                         fontSize: "12px",
                         color: "white", // Change the color of the value
                         background: "white",
-                        borderRadius: "5px",
+                        borderRadius: "25px",
                       }}
                       InputLabelProps={{
                         style: {
@@ -280,6 +304,7 @@ function Projectdetails() {
                         "& .MuiOutlinedInput-root": {
                           "& fieldset": {
                             borderColor: "white",
+                            borderRadius: "25px", // Adding border radius
                           },
                           "&:hover fieldset": {
                             borderColor: "white",
@@ -321,6 +346,7 @@ function Projectdetails() {
                         "& .MuiOutlinedInput-root": {
                           "& fieldset": {
                             borderColor: "white",
+                            borderRadius: "25px", // Adding border radius
                           },
                           "&:hover fieldset": {
                             borderColor: "white",
@@ -402,6 +428,7 @@ function Projectdetails() {
                         color: "white",
                         position: "relative",
                         bottom: "-100px",
+                        borderRadius: "25px",
                       }}
                     />
 
@@ -418,6 +445,7 @@ function Projectdetails() {
                         position: "relative",
                         bottom: "-100px",
                         left: "30px",
+                        borderRadius: "25px",
                       }}
                     />
                   </tr>
@@ -433,6 +461,7 @@ function Projectdetails() {
                         "& .MuiOutlinedInput-root": {
                           "& fieldset": {
                             borderColor: "white",
+                            borderRadius: "25px", // Adding border radius
                           },
                           "&:hover fieldset": {
                             borderColor: "white",

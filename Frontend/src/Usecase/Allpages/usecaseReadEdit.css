@@ -30,8 +30,9 @@
   width: 400px;
   top: 100px;
   left: 5px;
-  max-height: 100px;
+  max-height: 200px;
   overflow-x: auto;
+  z-index: 10;
 }
 #datas {
   font-size: 1rem;
@@ -267,4 +268,36 @@ th {
   top: 100px;
   left: 165px;
   color: rgb(21, 170, 41);
+}
+#usecase-down {
+  position: relative;
+  bottom: 8px;
+  left: 1040px;
+  width: clamp(30px, 50vw, 80px);
+  height: 2rem;
+  border: 1px groove;
+  border-color: transparent;
+  color: white;
+  border-radius: 5px;
+  margin: -0.625rem auto;
+  position: relative;
+  font-size: 12px;
+  transition: all 250ms;
+  font-family: sans-serif;
+  background-color: #38d845;
+}
+#down-al2 {
+  width: clamp(30px, 50vw, 90px);
+  height: 2rem;
+  border: 1px groove;
+  border-color: transparent;
+  color: white;
+  border-radius: 5px;
+  margin: -0.625rem auto;
+  position: relative;
+  top: 10px;
+  left: 240px;
+  transition: all 250ms;
+  font-family: sans-serif;
+  background-color: #38d845;
 }

@@ -1,14 +1,32 @@
 #tab1 {
   /* table-layout: fixed; */
   padding: 1px;
-  overflow: scroll; /* Changed to overflow-y */
+  overflow-y: auto; /* Changed to overflow-y */
   position: relative;
   bottom: 40px;
   border-collapse: collapse;
-  max-height: 350px;
+  height: 200px;
   top: 90px;
   width: 1120px;
-  left: 135px;
+  left: 145px;
+  padding: 10px;
+}
+th {
+  position: sticky;
+  top: 0;
+  background-color: #fff; /* Or any background color you prefer */
+  z-index: 0; /* Ensure it stays above the table body */
+}
+#tab2 {
+  padding: 1px;
+  overflow-y: auto; /* Changed to overflow-y */
+  position: relative;
+  bottom: 40px;
+  border-collapse: collapse;
+  max-height: 600px;
+  top: 90px;
+  width: 1120px;
+  left: 145px;
   padding: 5px;
 }
 .viewusecase1 {
@@ -53,18 +71,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 999; /* Ensures the edit text appears above other elements */
 }
-#tab2 {
-  padding: 1px;
-  overflow: scroll; /* Changed to overflow-y */
-  position: relative;
-  bottom: 40px;
-  border-collapse: collapse;
-  max-height: 350px;
-  top: 90px;
-  width: 1120px;
-  left: 145px;
-  padding: 5px;
-}
+
 ::placeholder {
   letter-spacing: 1px;
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; */
@@ -77,10 +84,10 @@
   overflow-x: auto;
   border-collapse: collapse;
 }
-#user-ID {
+/* #search-bar {
   top: 25px;
-  left: 400px;
-}
+  left: 300px;
+} */
 #user-ID:focus {
   background-color: rgb(255, 255, 255);
 }
@@ -90,14 +97,14 @@
 }
 #search-icon {
   position: relative;
-  top: 20px;
-  left: -70px;
+  top: 22px;
+  left: -40px;
   color: rgb(87, 84, 84);
 }
 #search-close {
   position: relative;
   top: 22px;
-  left: -20px;
+  left: -50px;
 }
 
 #thh {
@@ -170,7 +177,7 @@ td {
   border-collapse: collapse;
 }
 th {
-  padding: 14px;
+  padding: 10px;
 }
 
 td {
@@ -264,31 +271,17 @@ td {
   border: 1px groove;
   border-color: transparent;
   color: white;
-  border-radius: 20px;
+  border-radius: 5px;
   margin: -0.625rem auto;
   position: relative;
   font-size: 12px;
   top: 35px;
-  left: 1050px;
+  left: 1060px;
   transition: all 250ms;
   font-family: sans-serif;
   background-color: #38d845;
 }
-#down-al2 {
-  width: clamp(30px, 50vw, 90px);
-  height: 2rem;
-  border: 1px groove;
-  border-color: transparent;
-  color: white;
-  border-radius: 5px;
-  margin: -0.625rem auto;
-  position: relative;
-  top: 10px;
-  left: 240px;
-  transition: all 250ms;
-  font-family: sans-serif;
-  background-color: #38d845;
-}
+
 #taskbtn {
   position: relative;
   left: 80px;

@@ -1,25 +1,30 @@
-
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { useTheme } from '@mui/material/styles';
-import FormControl from '@mui/material/FormControl';
-import { InputLabel, MenuItem, Select, OutlinedInput, Button, Stack } from '@mui/material';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { useTheme } from "@mui/material/styles";
+import FormControl from "@mui/material/FormControl";
+import {
+  InputLabel,
+  MenuItem,
+  Select,
+  OutlinedInput,
+  Button,
+  Stack,
+} from "@mui/material";
 import "react-datepicker/dist/react-datepicker.css";
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import dayjs from 'dayjs';
-import 'dayjs/plugin/advancedFormat';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { styled } from '@mui/material/styles';
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
+import "dayjs/plugin/advancedFormat";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { styled } from "@mui/material/styles";
 import { useLocation } from "react-router-dom";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
 
 const ITEM_HEIGHT = 35;
 const ITEM_PADDING_TOP = 8;
@@ -32,25 +37,47 @@ const MenuProps = {
   },
 };
 const names = [
-  'Rishi',
-  'Thiru',
-  'Jana',
-  'Nandhini',
-  'Manoj',
-  'Somusundaram',
-  "nj",
-  "abdullah"
+  "Rishi",
+  "Thirumavalavan",
+  "Jana",
+  "Nandhini",
+  "Manoj",
+  "Somusundaram",
+  "nagarajan",
+  "abdullah",
+  "Easuraja",
+  "Neha",
+  "Vinotha",
+  "Rokith",
+  "Sowmya",
+  "Sandhiya",
+  "Shanmugamoorthy",
+  "Karthickraja",
+  "Jayapriya",
+  "Gokul",
+  "Elakkiya",
+  "Udhaya",
+  "Akash",
+  "Thirumalaivasan",
+  "Jagadeesan",
+  "Jerusha",
+  "Madhi",
+  "S.Karthick",
+  "Rahul",
+  "Nivetha",
+  "sabari",
+  "Dhandapani",
 ];
 
-const VisuallyHiddenInput = styled('input')({
-  clip: 'rect(0 0 0 0)',
-  clipPath: 'inset(50%)',
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
   height: 1,
-  overflow: 'hidden',
-  position: 'absolute',
+  overflow: "hidden",
+  position: "absolute",
   bottom: 0,
   left: 0,
-  whiteSpace: 'nowrap',
+  whiteSpace: "nowrap",
   width: 1,
 });
 
@@ -64,7 +91,7 @@ function getStyles(name, personName, theme) {
 }
 
 function Usecase() {
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const location = useLocation();
   const title = location.state?.title;
@@ -72,13 +99,13 @@ function Usecase() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    summary: '',
-    team: '',
-    status: '',
-    enddate: '',
+    summary: "",
+    team: "",
+    status: "",
+    enddate: "",
     reporterid: email,
-    attachment: '',
-    description: '',
+    attachment: "",
+    description: "",
     title: title,
   });
 
@@ -86,7 +113,7 @@ function Usecase() {
     setSelectedDate(date);
     setFormData((prevState) => ({
       ...prevState,
-      enddate: date ? date.toISOString() : '',
+      enddate: date ? date.toISOString() : "",
     }));
   };
 
@@ -95,7 +122,7 @@ function Usecase() {
     setStatus(value);
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -112,16 +139,18 @@ function Usecase() {
   };
 
   const handleChange1 = (event) => {
-    const { target: { value } } = event;
+    const {
+      target: { value },
+    } = event;
     setPersonName(value);
-    handleChange2({ target: { name: 'team', value } });
+    handleChange2({ target: { name: "team", value } });
   };
 
   const handleChange2 = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -133,65 +162,73 @@ function Usecase() {
     }
 
     try {
-      await axios.post('http://localhost:4023/usecase', formData);
+      await axios.post("http://localhost:4023/usecase", formData);
       toast.success("Usecase added");
 
       setFormData({
-        summary: '',
+        summary: "",
         team: [],
-        status: '',
-        enddate: '',
+        status: "",
+        enddate: "",
         reporterid: email,
-        attachment: '',
-        description: '',
+        attachment: "",
+        description: "",
         title: title,
       });
       setTimeout(() => {
-        navigate('/usecaseReadEdit', { state: { title} });
+        navigate("/usecaseReadEdit", { state: { title } });
       }, 2000);
     } catch (error) {
-      console.error('Error adding use case:', error);
+      console.error("Error adding use case:", error);
       toast.error("Error adding usecase");
     }
   };
 
   const back = () => {
-    navigate("/user")
+    navigate("/user");
   };
 
-  const [typedTitle, setTypedTitle] = useState('');
+  const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
     const typeTitle = async () => {
       for (let i = 0; i < title.length; i++) {
-        setTypedTitle(prevTitle => prevTitle + title[i]);
-        await new Promise(resolve => setTimeout(resolve, 200));
+        setTypedTitle((prevTitle) => prevTitle + title[i]);
+        await new Promise((resolve) => setTimeout(resolve, 200));
       }
     };
 
     typeTitle();
 
-    return () => setTypedTitle('');
+    return () => setTypedTitle("");
   }, [title]);
 
   return (
     <>
       <Stack spacing={2} direction="row">
-        <Button id='back-btn4' variant="outlined" onClick={back}>Back</Button>
+        <Button id="back-btn4" variant="outlined" onClick={back}>
+          Back
+        </Button>
       </Stack>
-      <div id='contain1'>
-        <span id='title1'>{typedTitle}</span>
+      <div id="contain1">
+        <span id="title1">{typedTitle}</span>
       </div>
-      <form id='usecase-Form'>
+      <form id="usecase-Form">
         <tr>
           <TextField
             id="filled-basic"
             label="Summary"
             variant="filled"
             style={{ width: "300px" }}
-            InputLabelProps={{ style: { fontSize: '13px', fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" } }}
+            InputLabelProps={{
+              style: {
+                fontSize: "13px",
+                fontFamily:
+                  "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+              },
+            }}
             onChange={handleChange2}
-            name='summary'
+            name="summary"
             value={formData.summary}
           />
         </tr>
@@ -202,10 +239,22 @@ function Usecase() {
               id="outlined-basic"
               label="Reporter ID"
               variant="outlined"
-              name='reporterid'
+              name="reporterid"
               value={formData.reporterid}
-              sx={{ m: 1, width: 300, position: 'relative', bottom: 9, right: 8 }}
-              InputLabelProps={{ style: { fontSize: '13px', fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" } }}
+              sx={{
+                m: 1,
+                width: 300,
+                position: "relative",
+                bottom: 9,
+                right: 8,
+              }}
+              InputLabelProps={{
+                style: {
+                  fontSize: "13px",
+                  fontFamily:
+                    "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+                },
+              }}
               readOnly
             />
           </tr>
@@ -214,27 +263,53 @@ function Usecase() {
             label="Description"
             multiline
             rows={2}
-            InputLabelProps={{ style: { fontSize: '13px', fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" } }}
+            InputLabelProps={{
+              style: {
+                fontSize: "13px",
+                fontFamily:
+                  "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+              },
+            }}
             onChange={handleChange2}
-            name='description'
+            name="description"
             style={{ width: "300px" }}
             value={formData.description}
           />
         </tr>
         <br></br>
         <tr>
-          <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 10, right: 8 }}>
-            <InputLabel id="demo-single-name-label" style={{ fontSize: '14px' }}>
-              Assignee{isFocused && '*'}
+          <FormControl
+            sx={{
+              m: 1,
+              width: 300,
+              position: "relative",
+              bottom: 10,
+              right: 8,
+            }}
+          >
+            <InputLabel
+              id="demo-single-name-label"
+              style={{ fontSize: "14px" }}
+            >
+              Assignee{isFocused && "*"}
             </InputLabel>
             <Select
-              name='team'
-              id='sel'
+              name="team"
+              id="sel"
               labelId="demo-single-name-label"
               style={{ height: "53px" }}
               value={personName}
               onChange={handleChange1}
-              input={<OutlinedInput label="Assignee" style={{ fontSize: '10px', fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" }} />}
+              input={
+                <OutlinedInput
+                  label="Assignee"
+                  style={{
+                    fontSize: "10px",
+                    fontFamily:
+                      "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+                  }}
+                />
+              }
               MenuProps={MenuProps}
               onFocus={handleFocus}
               onBlur={handleBlur}
@@ -252,15 +327,22 @@ function Usecase() {
           </FormControl>
         </tr>
         <tr>
-          <FormControl sx={{ m: 1, width: 300, position: 'relative', bottom: 7, right: 8 }}>
-            <InputLabel id="demo-simple-select-label" style={{ fontSize: "14px" }}>Status{isFocused && '*'}</InputLabel>
+          <FormControl
+            sx={{ m: 1, width: 300, position: "relative", bottom: 7, right: 8 }}
+          >
+            <InputLabel
+              id="demo-simple-select-label"
+              style={{ fontSize: "14px" }}
+            >
+              Status{isFocused && "*"}
+            </InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={status}
               label="Status"
               onChange={handleChange}
-              name='status'
+              name="status"
             >
               <MenuItem value="">
                 <em>None</em>
@@ -274,11 +356,11 @@ function Usecase() {
         </tr>
         <tr>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={['DatePicker']} >
+            <DemoContainer components={["DatePicker"]}>
               <DatePicker
                 label="End date"
-                sx={{ width: '300px' }}
-                InputLabelProps={{ sx: { fontSize: '0.8rem' } }}
+                sx={{ width: "300px" }}
+                InputLabelProps={{ sx: { fontSize: "0.8rem" } }}
                 value={selectedDate}
                 onChange={handleChangeDate}
                 name="enddate"
@@ -288,7 +370,7 @@ function Usecase() {
         </tr>
         <tr>
           <Button
-            id='attach-file'
+            id="attach-file"
             component="label"
             role={undefined}
             variant="contained"
@@ -297,10 +379,21 @@ function Usecase() {
             style={{ fontSize: "11px" }}
           >
             Attach file
-            <input type="file" onChange={handleChange2} name='attachment' style={{ display: 'none' }} />
+            <input
+              type="file"
+              onChange={handleChange2}
+              name="attachment"
+              style={{ display: "none" }}
+            />
             <VisuallyHiddenInput type="file" />
           </Button>
-          <Button onClick={handleAdd} id='add-btn' variant="contained" endIcon={<SendIcon style={{ height: "15px", fontSize: "11px" }} />} style={{ fontSize: "11px" }}>
+          <Button
+            onClick={handleAdd}
+            id="add-btn"
+            variant="contained"
+            endIcon={<SendIcon style={{ height: "15px", fontSize: "11px" }} />}
+            style={{ fontSize: "11px" }}
+          >
             Add
           </Button>
         </tr>
@@ -310,5 +403,3 @@ function Usecase() {
 }
 
 export default Usecase;
-
-
