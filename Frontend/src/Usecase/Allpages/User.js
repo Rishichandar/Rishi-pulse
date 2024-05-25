@@ -41,7 +41,7 @@ function User() {
   const fetchData1 = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4023/project_infouser?email=${Email}`
+        `http://192.168.0.135:4445/project_infouser?email=${Email}`
       );
       const jsonData = await response.json();
       setYourData(jsonData);
@@ -53,7 +53,7 @@ function User() {
   const searchId = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:4023/project_info/${userId}`
+        `http://192.168.0.135:4445/project_info/${userId}`
       );
       if (!response.ok) throw new Error("Failed to fetch user data");
       const data = await response.json();
@@ -74,7 +74,7 @@ function User() {
   const searchProject = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:4023/project_info1/${projectTitle}`
+        `http://192.168.0.135:4445/project_info1/${projectTitle}`
       );
       if (!response.ok) throw new Error("failed  to fetch");
       const ans = await response.json();
@@ -110,7 +110,7 @@ function User() {
     try {
       const { Projectid, ...dataToSend } = editedData;
       await axios.put(
-        `http://localhost:4023/api/update/${dataToSend.Title}`,
+        `http://192.168.0.135:4445/api/update/${dataToSend.Title}`,
         dataToSend
       );
       setEditMode(false);
@@ -178,7 +178,7 @@ function User() {
   const handleTaskButtonClick = async (title) => {
     try {
       const response = await fetch(
-        `http://localhost:4023/task_details/${title}`
+        `http://192.168.0.135:4445/task_details/${title}`
       );
       if (!response.ok) throw new Error("Failed to fetch task data");
       const jsonData = await response.json();

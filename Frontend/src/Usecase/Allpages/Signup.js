@@ -32,12 +32,15 @@ function Signup() {
     }
 
     try {
-      const response = await axios.post("http://localhost:4023/taskdetails", {
-        taskDetails,
-        emailid,
-        Title,
-        summary,
-      });
+      const response = await axios.post(
+        "http://192.168.0.135:4445/taskdetails",
+        {
+          taskDetails,
+          emailid,
+          Title,
+          summary,
+        }
+      );
       console.log(response.data);
       toast.success("Task added successfully");
       setTaskDetails("");

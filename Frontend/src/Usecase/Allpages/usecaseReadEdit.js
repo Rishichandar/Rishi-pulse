@@ -25,7 +25,9 @@ export const UsecaseReadEdit = () => {
       try {
         if (!title) return;
         const response = await axios.get(
-          `http://localhost:4023/usecases?title=${encodeURIComponent(title)}`
+          `http://192.168.0.135:4445/usecases?title=${encodeURIComponent(
+            title
+          )}`
         );
         setUsecases(response.data);
       } catch (error) {
@@ -53,14 +55,14 @@ export const UsecaseReadEdit = () => {
   const handleSubmit = async () => {
     try {
       await axios.put(
-        `http://localhost:4023/usecases/${editedUsecase.id}`,
+        `http://192.168.0.135:4445/usecases/${editedUsecase.id}`,
         editedUsecase
       );
       setEditModeId(null);
       setEditedUsecase({});
       toast.success("Updated successfully");
       const response = await axios.get(
-        `http://localhost:4023/usecases?title=${encodeURIComponent(title)}`
+        `http://192.168.0.135:4445/usecases?title=${encodeURIComponent(title)}`
       );
       setUsecases(response.data);
     } catch (error) {
@@ -106,7 +108,7 @@ export const UsecaseReadEdit = () => {
   const handleTaskButtonClick = async (summary) => {
     try {
       const response = await fetch(
-        `http://localhost:4023/task_details/${summary}`
+        `http://192.168.0.135:4445/task_details/${summary}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch task data");

@@ -7,7 +7,7 @@
 }
 #sub {
   width: clamp(100px, 50vw, 145px);
-  height: 50px;
+  height: 45px;
   padding: 0 1.25rem;
   border: 1px groove;
   border-color: #d5dbd7;
@@ -19,16 +19,16 @@
   background-color: #ffffff;
   position: relative;
   left: 486px;
-  top: 108px;
+  top: 113px;
   letter-spacing: 1px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 #attach-file1 {
   position: relative;
-  top: 171px;
+  top: 175px;
   width: 145px;
-  height: 50px;
+  height: 45px;
   left: 30px;
   border-radius: 25px;
 }

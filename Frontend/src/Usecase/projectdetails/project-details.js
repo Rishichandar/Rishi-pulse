@@ -127,7 +127,7 @@ function Projectdetails() {
       return;
     }
     axios
-      .post("http://localhost:4023/project_infos", inputValue)
+      .post("http://192.168.0.135:4445/project_infos", inputValue)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     toast.success("submitted successfully");
